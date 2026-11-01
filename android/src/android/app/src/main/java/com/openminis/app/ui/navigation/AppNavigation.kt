@@ -816,6 +816,7 @@ fun AppNavigation(
             SettingsScreen(
                 onBack = { navController.safePopBackStack() },
                 onProvidersClick = { navController.safeNavigate(Routes.PROVIDER_LIST) },
+                onLocalModelsClick = { navController.safeNavigate(io.github.deezi74.nanoagent.local.ROUTE_LOCAL_MODELS) },
                 onModelGroupsClick = { navController.safeNavigate(Routes.MODEL_GROUPS) },
                 onRootfsClick = { navController.safeNavigate(Routes.STORAGE) },
                 onBackupClick = { navController.safeNavigate(Routes.BACKUP) },
@@ -1076,6 +1077,10 @@ fun AppNavigation(
                     }
                 },
             )
+        }
+
+        composable(io.github.deezi74.nanoagent.local.ROUTE_LOCAL_MODELS) { // Nano Agent: on-phone models
+            io.github.deezi74.nanoagent.local.LocalModelsScreen(onBack = { navController.safePopBackStack() })
         }
 
         composable(Routes.PROVIDER_LIST) {

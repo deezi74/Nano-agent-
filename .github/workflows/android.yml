@@ -69,6 +69,18 @@ jobs:
           export PATH="$GOPATH/bin:$PATH"
           bash scripts/android/build-natives.sh
 
+      - name: On-phone AI engine cache (llama-server)
+        uses: actions/cache@v4
+        with:
+          path: android/src/android/app/src/main/jniLibs/arm64-v8a/libllamaserver.so
+          key: llama-server-b12017-${{ hashFiles('scripts/android/build-llama-server.sh') }}
+
+      - name: Build on-phone AI engine (llama.cpp)
+        run: |
+          export ANDROID_NDK_HOME="$ANDROID_HOME/ndk/$NDK_VERSION"
+          bash scripts/android/build-llama-server.sh
+          ls -la android/src/android/app/src/main/jniLibs/arm64-v8a/
+
       - name: Signing key (cache)
         id: keycache
         uses: actions/cache@v4

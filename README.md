@@ -49,10 +49,19 @@ Nano Agent has no servers of its own. Add any of these under **Settings › Prov
 
 - **OpenRouter**: one key, hundreds of models (recommended to start)
 - **OpenAI**, **Anthropic Claude**, **Google Gemini**, **xAI Grok**, **Groq**, **Mistral**
-- **FreeLLMAPI** or any OpenAI-compatible server: base URL e.g. `http://localhost:3001/v1` (in Termux) and model `auto`
+- **FreeLLMAPI** (built in): paste your FreeLLMAPI key, or leave it empty if your server has none. Base URL `http://localhost:3001/v1` when it runs in Termux, model `auto`. Any other OpenAI-compatible server works the same way
 - **Ollama**, **LM Studio**, **vLLM** on your own machine
 
 Then pick a model for each job under **Settings › Models**: *Chat*, *Operating the screen* (needs a vision model), *Making pictures*, *Making clips*.
+
+## AI that runs on the phone
+
+**Settings › On-device models** runs a model on the phone itself, with no internet and no key. It uses llama.cpp, which is built into the APK.
+
+1. Download one of the suggested models: Gemma 3 1B or Llama 3.2 1B (about 0.8 GB, any phone), Llama 3.2 3B (about 2 GB), or Gemma 3 4B and Phi-4 mini (about 2.5 GB, 8 GB of RAM). Downloads resume if they drop. You can also import a `.gguf` file or type any Hugging Face `owner/repo:file.gguf`.
+2. Tap **Use**. Nano Agent starts the engine and adds an **On this phone** provider, then makes it the default for new chats.
+
+The engine starts again with the app. You can turn that off and pick the context size (4K, 8K or 16K) on the same screen. Small models are fine for chat but weaker at long tool-using tasks, so keep a cloud provider for those.
 
 ## Build it yourself
 

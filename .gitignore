@@ -20,3 +20,6 @@ __pycache__/
 .idea/
 *.iml
 .DS_Store
+
+# llama.cpp source/build for the on-phone engine (scripts/android/build-llama-server.sh)
+android/deps/.llama/

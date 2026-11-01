@@ -467,6 +467,41 @@ def no_login() -> None:
             edit(path, subs, expect=False)
 
 
+def llm_local() -> None:
+    """On-phone AI models (io.github.deezi74.nanoagent.local): a Settings row, its screen and
+    bringing the local engine back up when the app starts."""
+    L = "io.github.deezi74.nanoagent.local"
+    nav = OM / "ui" / "navigation" / "AppNavigation.kt"
+    edit(nav, [
+        (r"(onProvidersClick = \{ navController\.safeNavigate\(Routes\.PROVIDER_LIST\) \},\n)(?!\s*onLocalModelsClick)",
+         rf"\g<1>                onLocalModelsClick = {{ navController.safeNavigate({L}.ROUTE_LOCAL_MODELS) }},\n"),
+        (r"(\n([ \t]*)composable\(Routes\.PROVIDER_LIST\) \{)",
+         rf"\n\g<2>composable({L}.ROUTE_LOCAL_MODELS) {{ // Nano Agent: on-phone models\n"
+         rf"\g<2>    {L}.LocalModelsScreen(onBack = {{ navController.safePopBackStack() }})\n"
+         rf"\g<2>}}\n\g<1>") if "ROUTE_LOCAL_MODELS) { // Nano Agent" not in nav.read_text(encoding="utf-8") else ("(?!x)x", ""),
+    ])
+    settings = OM / "ui" / "settings" / "SettingsScreen.kt"
+    edit(settings, [
+        (r"(\n([ \t]*)onUsageClick: \(\) -> Unit = \{\},\n)(?!\s*onLocalModelsClick)",
+         r"\g<1>\g<2>onLocalModelsClick: () -> Unit = {}, // Nano Agent: Settings → On-device models\n"),
+        (r"(title = stringResource\(R\.string\.settings_manage_providers\),\n\s*icon = Icons\.Outlined\.Lock,\n\s*onClick = onProvidersClick,\n([ \t]*)\)\n)(?!\s*io\.github\.nanomuse\.ui\.muse\.MuseRowDivider\(\)\n\s*// Nano Agent: on-phone)",
+         r"\g<1>\g<2>io.github.nanomuse.ui.muse.MuseRowDivider()\n"
+         r"\g<2>// Nano Agent: on-phone models (llama.cpp, nothing leaves the phone)\n"
+         r"\g<2>io.github.nanomuse.ui.muse.MuseRow(\n"
+         "\\g<2>    title = \"On-device models\",\\n"
+         r"\g<2>    icon = Icons.Outlined.PhoneAndroid,\n"
+         r"\g<2>    onClick = onLocalModelsClick,\n"
+         r"\g<2>)\n"),
+        (r"(\nimport androidx\.compose\.material\.icons\.outlined\.AutoAwesome\n)(?!import androidx\.compose\.material\.icons\.outlined\.PhoneAndroid)",
+         r"\g<1>import androidx.compose.material.icons.outlined.PhoneAndroid // Nano Agent: On-device models row\n"),
+    ])
+    edit(OM / "MinisApp.kt", [
+        (r"(\n([ \t]*)AppLogger\.primeContext\(this\)\n)(?!\s*// Nano Agent: on-phone)",
+         rf"\g<1>\g<2>// Nano Agent: on-phone model server back up if one was chosen (waits, then runs off the main thread)\n"
+         rf"\g<2>{L}.LocalLlm.onAppStart(this)\n"),
+    ])
+
+
 def report_cjk() -> None:
     """Chinese left in user-facing places (strings, catalogues), for a human to look at."""
     left = []
@@ -489,6 +524,7 @@ def main() -> int:
     colours()
     touches()
     no_login()
+    llm_local()
     report_cjk()
     verb = "would change" if CHECK else "changed"
     print(f"{verb} {len(set(changed))} files")

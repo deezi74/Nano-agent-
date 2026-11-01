@@ -22,6 +22,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.automirrored.filled.KeyboardArrowRight
 import androidx.compose.material.icons.outlined.AutoAwesome
+import androidx.compose.material.icons.outlined.PhoneAndroid // Nano Agent: On-device models row
 import androidx.compose.material.icons.outlined.CloudQueue // nanoMuse: nanoMuse Cloud row
 import androidx.compose.material.icons.outlined.Computer // nanoMuse: Computers row
 import androidx.compose.material.icons.outlined.TouchApp // nanoMuse: Hands row
@@ -109,6 +110,7 @@ fun SettingsScreen(
     onConnectorsClick: () -> Unit = {}, // nanoMuse: Settings → Connectors (the services the agent can be let into)
     onPermissionsClick: () -> Unit = {},
     onUsageClick: () -> Unit = {},
+    onLocalModelsClick: () -> Unit = {}, // Nano Agent: Settings → On-device models
     onAppearanceClick: () -> Unit = {},
     onLogsClick: () -> Unit = {},
     // T219-2: Mount External Folders entry. Default no-op for any caller
@@ -200,6 +202,13 @@ fun SettingsScreen(
                     title = stringResource(R.string.settings_manage_providers),
                     icon = Icons.Outlined.Lock,
                     onClick = onProvidersClick,
+                )
+                io.github.nanomuse.ui.muse.MuseRowDivider()
+                // Nano Agent: on-phone models (llama.cpp, nothing leaves the phone)
+                io.github.nanomuse.ui.muse.MuseRow(
+                    title = "On-device models",
+                    icon = Icons.Outlined.PhoneAndroid,
+                    onClick = onLocalModelsClick,
                 )
                 io.github.nanomuse.ui.muse.MuseRowDivider()
                 // nanoMuse: the image and video models moved into the Models card above (0.1.41).
