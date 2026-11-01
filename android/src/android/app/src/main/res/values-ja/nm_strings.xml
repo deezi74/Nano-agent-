@@ -605,9 +605,9 @@
     <string name="nm_pc_title">コンピューター</string>
     <string name="nm_pc_none_short">なし</string>
     <string name="nm_pc_intro">ここで言えば、コンピューターで実行されます: コマンド、ファイル、そのブラウザーのページ、画面の確認、あるいはそこにある Nano Agent へのタスク全体。スマートフォンがコンピューターを動かし、その逆はありません。承認はすべてまずここで決まります。</string>
-    <string name="nm_pc_hub_title">簡単な方法: 同じアカウントで Nano Agent Desktop</string>
-    <string name="nm_pc_hub_body">コンピューターに Nano Agent Desktop をインストールし、この端末のアカウントでサインインしてください。数秒でアカウント → デバイスに表示されます。</string>
-    <string name="nm_pc_hub_download">Nano Agent Desktop を入手</string>
+    <string name="nm_pc_hub_title">簡単な方法: 同じアカウントで nanoMuse Desktop</string>
+    <string name="nm_pc_hub_body">コンピューターに nanoMuse Desktop をインストールし、この端末のアカウントでサインインしてください。数秒でアカウント → デバイスに表示されます。</string>
+    <string name="nm_pc_hub_download">nanoMuse Desktop を入手</string>
     <string name="nm_pc_hub_account">アカウントとデバイス</string>
     <string name="nm_pc_section_paired">このアカウントのコンピューター</string>
     <string name="nm_pc_none">コンピューターはまだありません</string>
@@ -620,7 +620,7 @@
     <string name="nm_pc_account_hint">この端末は %1$s としてサインインしています。コンピューターも同じアカウントでサインインする必要があります。</string>
     <string name="nm_pc_checking">確認中…</string>
     <string name="nm_pc_answering">%1$s が応答しました</string>
-    <string name="nm_pc_not_answering">%1$s が応答しません。そちらで Nano Agent Desktop はまだ動いていますか？</string>
+    <string name="nm_pc_not_answering">%1$s が応答しません。そちらで nanoMuse Desktop はまだ動いていますか？</string>
 
     <!-- the approval card -->
     <string name="nm_risk_desc_on_computer">この端末ではなく、コンピューター「%1$s」で実行されます。</string>
@@ -643,9 +643,9 @@
     <string name="nm_setup_own_key">自分の API キーがあります</string>
 
     <!-- nanoMuse: the first-run pages -->
-    <string name="nm_welcome_tagline">あなたのすべてのデバイスのための、オープンソースのパーソナルエージェント。</string>
-    <string name="nm_welcome_email">サインイン（無料）</string>
-    <string name="nm_welcome_fine_print">1 つのアカウントでデバイスがつながり、無料のモデル利用も付いてきます。料金はかかりません。自分の API キーはすぐあとで追加できます。</string>
+    <string name="nm_welcome_tagline">Your pocket AI agent. It does things, not just answers.</string>
+    <string name="nm_welcome_email">Add your AI provider</string>
+    <string name="nm_welcome_fine_print">No account and no sign-in. Paste a key from OpenRouter, OpenAI, Anthropic, Google or xAI, or point it at your own FreeLLMAPI or Ollama for free models.</string>
     <string name="nm_setup_source_title">どのモデルが答えますか？</string>
     <string name="nm_setup_source_sub">アカウントにはすでにモデルが付いています。自分の API キーも追加でき、いつでも切り替えられます。</string>
     <string name="nm_setup_source_cloud">Community Relay のモデルを使う</string>
@@ -660,9 +660,9 @@
     <string name="nm_welcome_feat_chat_sub">有能なモデル、画像と動画の生成、ツール、スキル、メモリ。すべてスマートフォンの上で</string>
     <string name="nm_welcome_feat_hands">ハンズ: スマートフォンを使います</string>
     <string name="nm_welcome_feat_hands_sub">列車の予約、食事の注文、アプリ内での調べもの。あなたは見守り、いつでも止められます</string>
-    <string name="nm_welcome_feat_reach">リーチ: ここからコンピューターへ</string>
-    <string name="nm_welcome_feat_reach_sub">Mac、Windows、Linux のマシンに Nano Agent Desktop を入れて同じアカウントでサインインすれば、スマートフォンから仕事を任せられます</string>
-    <string name="nm_welcome_notice">Nano Agent は非営利のオープンソースコミュニティプロジェクトです：ずっと無料です。モデルには開発者が負担する無料枠が付き、その後は自分のキーを使います。何も売りません。リレーが保持するものはプライバシーポリシーに書かれ、設定 → データ管理はあなたのものです。</string>
+    <string name="nm_welcome_feat_reach">Its own computer</string>
+    <string name="nm_welcome_feat_reach_sub">A Linux sandbox and a browser inside the app: it runs code, opens websites and fills in forms for you</string>
+    <string name="nm_welcome_notice">Nano Agent is free, open-source software (GPL-3.0). Your chats stay on this phone and go only to the AI provider you pick. There is nothing to sign up for.</string>
     <string name="nm_welcome_hands_title">スマートフォンを使わせる</string>
     <string name="nm_welcome_hands_sub">2 つの権限で、アプリを開き、タップし、入力を代わりに行えます。各ステップと停止ボタンの付いたカプセルが画面に残ります。ログイン、パスワード、コードは常にあなたのものです。</string>
     <string name="nm_welcome_hands_turn_on">オンにする</string>
@@ -675,7 +675,7 @@
     <string name="nm_cloud_mode_password">パスワードで</string>
     <string name="nm_cloud_password">パスワード</string>
     <string name="nm_cloud_forgot_password">パスワードを忘れた場合はコードでサインイン</string>
-    <string name="nm_cloud_identifier">中国本土の電話番号またはメールアドレス</string>
+    <string name="nm_cloud_identifier">Phone number or e-mail</string>
     <string name="nm_cloud_identifier_hint">you@example.com</string>
     <string name="nm_cloud_code">コード</string>
     <string name="nm_cloud_send_code">コードを送信</string>
@@ -700,11 +700,11 @@
     <string name="nm_cloud_server_change_confirm">この端末のキーは今のサーバーのものです。まずここでサインアウトし、サインイン画面から別のサーバーにサインインしてください。</string>
 
     <!-- Text-message codes: said on the sign-in screen before asking, and for the relay's phone_region answer -->
-    <string name="nm_cloud_sms_region">SMS の確認コードは中国本土の電話番号にしか届きません。代わりにメールアドレスを使ってください。</string>
+    <string name="nm_cloud_sms_region">Use an e-mail address.</string>
     <string name="nm_cloud_fine_print">リレーが保持するのはアカウント ID、マスクした識別子、利用回数、そしてエージェントの名前と見た目です。ほかに何を保持し、何をオフにできるかはプライバシーポリシーにあります。</string>
-    <string name="nm_cloud_not_signed_in">サインインしていません</string>
-    <string name="nm_cloud_not_signed_in_sub">電話番号かメールアドレスでサインインすると無料枠が使えます。自分のプロバイダはそのまま残ります。</string>
-    <string name="nm_cloud_sign_in">サインイン</string>
+    <string name="nm_cloud_not_signed_in">No account needed</string>
+    <string name="nm_cloud_not_signed_in_sub">Nano Agent has no sign-in. Add a key of your own under Settings › Providers.</string>
+    <string name="nm_cloud_sign_in">Add a provider</string>
     <string name="nm_cloud_channel_phone">電話番号</string>
     <string name="nm_cloud_channel_email">メール</string>
     <string name="nm_cloud_remaining">残り %1$s トークン</string>
@@ -721,7 +721,7 @@
     <string name="nm_cloud_sign_out_sub">この端末のキーは失効し、Cloud プロバイダは削除されます。無料枠はアカウントに残ります。</string>
     <string name="nm_cloud_sign_out_confirm">Community Relay プロバイダとそのモデルがこの端末から削除されます。</string>
     <string name="nm_cloud_row_remaining">残り %1$s</string>
-    <string name="nm_cloud_row_sign_in">サインイン</string>
+    <string name="nm_cloud_row_sign_in">Add a provider</string>
     <string name="nm_cloud_err_bad_identifier">メールアドレスの形式ではないようです。</string>
     <string name="nm_cloud_err_code_wrong">コードが違います。</string>
     <string name="nm_cloud_err_code_expired">コードの期限が切れました。新しいコードを送ってください。</string>
@@ -761,7 +761,7 @@
     <string name="nm_cloud_err_hub_paused">このリレーではデバイス間の連携を一時停止しています。各デバイスは単独で動き続けます。</string>
     <string name="nm_refusal_relay_says">リレーからの説明: %1$s</string>
     <string name="nm_refusal_new_chat">新しいチャット</string>
-    <string name="nm_refusal_sign_in">サインイン</string>
+    <string name="nm_refusal_sign_in">Add a provider</string>
     <string name="nm_refusal_open_settings">設定を開く</string>
 
     <!-- 0.1.20: the account page -->
@@ -819,7 +819,7 @@
     <string name="nm_ways_add">追加</string>
     <string name="nm_ways_add_named">%1$s を追加</string>
     <string name="nm_ways_get_key">キーを取得</string>
-    <string name="nm_ways_sign_in">サインイン</string>
+    <string name="nm_ways_sign_in">Add a provider</string>
     <string name="nm_ways_more">他のプロバイダ</string>
     <string name="nm_ways_less">閉じる</string>
     <string name="nm_ways_sub_title">すでに支払っているサブスクリプション</string>
@@ -832,7 +832,7 @@
     <string name="nm_cap_pictures_unavailable">画像には画像モデルのあるプロバイダが必要です：百煉、OpenAI、Gemini、OpenRouter。</string>
     <string name="nm_cap_clips_unavailable">クリップには動画モデルのあるプロバイダが必要です：Alibaba Cloud 百煉。</string>
     <string name="nm_cap_hands_unavailable">ハンズには画面を見られるモデルが必要です：百煉、OpenRouter、OpenAI、Anthropic、Gemini、またはビジョンモデルのあるプロバイダ。</string>
-    <string name="nm_cap_chat_unavailable">チャットにはチャットモデルのあるプロバイダが必要です：キーを追加するか、サインインしてください。</string>
+    <string name="nm_cap_chat_unavailable">Chat needs a provider with chat models: add a key under Settings › Providers.</string>
     <string name="nm_ways_invite_title">友だちを招待: あなたのリンクで登録した人が最初のリクエストを送るごとに、あなたに +¥%1$s、相手に +¥%2$s。</string>
     <string name="nm_ways_invite_share">リンクを共有</string>
     <string name="nm_ways_invite_copy">リンクをコピー</string>
@@ -857,7 +857,7 @@
     <string name="nm_data_delete_sub">このアカウントのチャットの記録と、保持しているすべての学習ターンを削除します。スイッチが今オンかオフかは関係ありません。スイッチをオフにしただけでは、ここで削除するまで保持されたままです。</string>
     <string name="nm_data_delete_confirm">チャットの記録と保持している学習ターンがサーバーから削除されます。元に戻せません。</string>
     <string name="nm_data_deleted">削除しました：記録 %1$d ターン、ファイル %2$d 件、学習ターン %3$d ターン。</string>
-    <string name="nm_data_sign_in">使うには Community Relay にサインインしてください。</string>
+    <string name="nm_data_sign_in">Not used: Nano Agent keeps your chats on this phone.</string>
     <string name="nm_data_privacy">プライバシーポリシー</string>
     <string name="nm_data_status_on">オン</string>
     <string name="nm_data_status_off">オフ</string>
@@ -937,7 +937,7 @@
     <string name="nm_cloud_allowance_left">残り ¥%1$s · $%2$s</string>
     <string name="nm_cloud_allowance_why">最初に ¥%1$s、招待した友だち 1 人ごとに +¥%2$s、相手にも +¥%2$s。その後は自分のキーでモデルを使い続けます。</string>
     <string name="nm_cloud_tokens_line">累計 %1$s トークン · 今日 %2$s</string>
-    <string name="nm_cloud_notice_title">無料、オープンソース、非営利</string>
+    <string name="nm_cloud_notice_title">Free and open source</string>
     <string name="nm_cloud_notice_closing">バグを見つけた、機能がほしい、パッチがある？GitHub のリポジトリへどうぞ。</string>
     <string name="nm_cloud_notice">Nano Agent は非営利のオープンソースコミュニティプロジェクトです：ずっと無料です。モデルには開発者が負担する無料枠が付き、その後は自分のキーを使います。何も売りません。リレーが保持するものはプライバシーポリシーに書かれ、設定 → データ管理はあなたのものです。アカウントはいつでも削除できます。</string>
 
@@ -965,7 +965,7 @@
     <string name="nm_devices_connected">接続済み</string>
     <string name="nm_devices_connecting">接続中…</string>
     <string name="nm_devices_off">オフ</string>
-    <string name="nm_devices_none">ほかのデバイスはまだありません。コンピューターに Nano Agent Desktop をインストールして同じアカウントでサインインすると、数秒でここに表示されます。</string>
+    <string name="nm_devices_none">ほかのデバイスはまだありません。コンピューターに nanoMuse Desktop をインストールして同じアカウントでサインインすると、数秒でここに表示されます。</string>
     <string name="nm_devices_online">オンライン</string>
     <string name="nm_devices_offline">オフライン</string>
     <string name="nm_devices_web">ウェブコンソール</string>
@@ -1140,7 +1140,7 @@
     <string name="nm_models_cloud_off_refused">先に自分のプロバイダーを追加してください。Community Relay をオフにすると、ほかに答えられるものがありません。</string>
     <string name="nm_chat_no_model">いま答えられるモデルがありません。設定 › モデルで一つ選んでください。</string>
     <string name="nm_cloud_provider_no_delete">このプロバイダーは Community Relay のアカウントそのものです。モデルを使わないようにするには上のスイッチをオフにし、サインアウトするには「設定 › Community Relay」を開いてください。</string>
-    <string name="nm_welcome_own_key">自分の API キーを使う</string>
+    <string name="nm_welcome_own_key">Skip for now</string>
     <string name="nm_useit_title">何に使うか</string>
     <string name="nm_useit_body_signed_out">このキーに任せることを選んでください。</string>
     <string name="nm_useit_use">使う</string>

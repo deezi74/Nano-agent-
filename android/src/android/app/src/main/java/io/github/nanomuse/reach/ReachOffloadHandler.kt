@@ -49,8 +49,8 @@ class ReachOffloadHandler(private val context: Context) : NativeOffloadHandler {
                 "no_computer",
                 when {
                     Computers.all(context).isEmpty() && !io.github.nanomuse.hub.Hub.isConnected ->
-                        "No other device is connected. Computers join by running Nano Agent Desktop signed in to the same Community Relay account; this phone is not signed in to Community Relay yet."
-                    Computers.all(context).isEmpty() -> "No other device is online right now. Computers join by running Nano Agent Desktop signed in to the same Community Relay account."
+                        "No other device is connected. Computers join by running nanoMuse Desktop signed in to the same Community Relay account; this phone is not signed in to Community Relay yet."
+                    Computers.all(context).isEmpty() -> "No other device is online right now. Computers join by running nanoMuse Desktop signed in to the same Community Relay account."
                     else -> "No connected device matches “${args.get("on")}”. Connected: " + Computers.all(context).joinToString(", ") { it.name } + "."
                 },
             )

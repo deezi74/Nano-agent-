@@ -691,21 +691,22 @@ fun AppNavigation(
         // nanoMuse: nanoMuse Cloud — sign in with a phone/e-mail code for a starter allowance,
         // and the account page (balance, sign out) behind Settings.
         composable(io.github.nanomuse.ui.cloud.ROUTE_CLOUD_SIGN_IN) {
-            io.github.nanomuse.ui.cloud.CloudSignInScreen(
-                onBack = { navController.safePopBackStack() },
-                onSignedIn = { navController.safePopBackStack() },
-            )
+            // Nano Agent: no account and no sign-in. Anything that used to open the relay
+            // account opens the AI providers instead.
+            androidx.compose.runtime.LaunchedEffect(Unit) {
+                navController.navigate(Routes.ADD_PROVIDER) {
+                    popUpTo(io.github.nanomuse.ui.cloud.ROUTE_CLOUD_SIGN_IN) { inclusive = true }
+                }
+            }
         }
         composable(io.github.nanomuse.ui.cloud.ROUTE_CLOUD_ACCOUNT) {
-            io.github.nanomuse.ui.cloud.CloudAccountScreen(
-                onBack = { navController.safePopBackStack() },
-                onSignIn = { navController.safeNavigate(io.github.nanomuse.ui.cloud.ROUTE_CLOUD_SIGN_IN) },
-                onOpenProvider = { id -> navController.safeNavigate(Routes.providerDetail(id)) },
-                onOpenModelGroups = { navController.safeNavigate(Routes.MODEL_GROUPS) },
-                onOpenDataControls = { navController.safeNavigate(io.github.nanomuse.ui.cloud.ROUTE_DATA_CONTROLS) },
-                // nanoMuse: "Ask this device" — back to the chat with "@<name> " in the composer
-                onAskDevice = { name -> io.github.nanomuse.ui.home.HomeShell.prefill(navController, "@$name ") },
-            )
+            // Nano Agent: no account and no sign-in. Anything that used to open the relay
+            // account opens the AI providers instead.
+            androidx.compose.runtime.LaunchedEffect(Unit) {
+                navController.navigate(Routes.PROVIDER_LIST) {
+                    popUpTo(io.github.nanomuse.ui.cloud.ROUTE_CLOUD_ACCOUNT) { inclusive = true }
+                }
+            }
         }
         // nanoMuse: Settings → Data controls — the switch over what nanoMuse Cloud keeps of the chats.
         composable(io.github.nanomuse.ui.cloud.ROUTE_DATA_CONTROLS) {

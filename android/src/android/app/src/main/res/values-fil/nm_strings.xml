@@ -608,9 +608,9 @@
     <string name="nm_pc_title">Mga computer</string>
     <string name="nm_pc_none_short">Wala</string>
     <string name="nm_pc_intro">Sabihin dito, gagawin sa computer mo: isang command, isang file, isang pahina sa browser nito, isang tingin sa screen nito, o isang buong gawain para sa Nano Agent doon. Ang telepono ang nagpapatakbo sa computer, hindi kailanman kabaligtaran; bawat pag-apruba ay dito muna pinagpapasyahan.</string>
-    <string name="nm_pc_hub_title">Ang madaling paraan: Nano Agent Desktop, parehong account</string>
-    <string name="nm_pc_hub_body">I-install ang Nano Agent Desktop sa computer at mag-sign in gamit ang account ng teleponong ito; lalabas ito sa ilalim ng Account → Mga device sa loob ng ilang segundo.</string>
-    <string name="nm_pc_hub_download">Kunin ang Nano Agent Desktop</string>
+    <string name="nm_pc_hub_title">Ang madaling paraan: nanoMuse Desktop, parehong account</string>
+    <string name="nm_pc_hub_body">I-install ang nanoMuse Desktop sa computer at mag-sign in gamit ang account ng teleponong ito; lalabas ito sa ilalim ng Account → Mga device sa loob ng ilang segundo.</string>
+    <string name="nm_pc_hub_download">Kunin ang nanoMuse Desktop</string>
     <string name="nm_pc_hub_account">Account at mga device</string>
     <string name="nm_pc_section_paired">Mga computer sa account na ito</string>
     <string name="nm_pc_none">Wala pang computer</string>
@@ -623,7 +623,7 @@
     <string name="nm_pc_account_hint">Naka-sign in ang teleponong ito bilang %1$s; dapat mag-sign in ang computer gamit ang parehong account.</string>
     <string name="nm_pc_checking">Sinusuri…</string>
     <string name="nm_pc_answering">Sumasagot ang %1$s</string>
-    <string name="nm_pc_not_answering">Hindi sumasagot ang %1$s. Tumatakbo pa ba doon ang Nano Agent Desktop?</string>
+    <string name="nm_pc_not_answering">Hindi sumasagot ang %1$s. Tumatakbo pa ba doon ang nanoMuse Desktop?</string>
 
     <!-- the approval card -->
     <string name="nm_risk_desc_on_computer">Sa computer na “%1$s”, hindi sa teleponong ito.</string>
@@ -646,9 +646,9 @@
     <string name="nm_setup_own_key">May sarili akong API key</string>
 
     <!-- nanoMuse: the first-run pages -->
-    <string name="nm_welcome_tagline">Isang open-source na personal na agent para sa bawat device na pag-aari mo.</string>
-    <string name="nm_welcome_email">Mag-sign in (libre)</string>
-    <string name="nm_welcome_fine_print">Isang account ang nagsasama-sama sa mga device mo at nagdadala ng libreng paggamit ng modelo; walang sinisingil. Maidaragdag ang sarili mong API key kaagad pagkatapos.</string>
+    <string name="nm_welcome_tagline">Your pocket AI agent. It does things, not just answers.</string>
+    <string name="nm_welcome_email">Add your AI provider</string>
+    <string name="nm_welcome_fine_print">No account and no sign-in. Paste a key from OpenRouter, OpenAI, Anthropic, Google or xAI, or point it at your own FreeLLMAPI or Ollama for free models.</string>
     <string name="nm_setup_source_title">Aling modelo ang sasagot?</string>
     <string name="nm_setup_source_sub">May dala nang isa ang account mo. Maaari ka ring magdagdag ng sarili mong API key at lumipat anumang oras.</string>
     <string name="nm_setup_source_cloud">Gamitin ang modelo ng Community Relay</string>
@@ -663,9 +663,9 @@
     <string name="nm_welcome_feat_chat_sub">Isang mahusay na modelo, paggawa ng larawan at video, mga tool, skill at memorya, sa telepono mo</string>
     <string name="nm_welcome_feat_hands">Mga kamay: ginagamit nito ang telepono mo</string>
     <string name="nm_welcome_feat_hands_sub">Nagbu-book ng tren, umoorder ng pagkain, naghahanap ng isang bagay sa isang app; nanonood ka, at maaari mo itong itigil anumang oras</string>
-    <string name="nm_welcome_feat_reach">Abot: ang mga computer mo, mula rito</string>
-    <string name="nm_welcome_feat_reach_sub">I-install ang Nano Agent Desktop sa isang Mac, Windows o Linux machine, mag-sign in gamit ang parehong account, at bigyan ito ng trabaho mula sa telepono</string>
-    <string name="nm_welcome_notice">Ang Nano Agent ay isang non-profit na open-source na proyekto ng komunidad: libre, habang-buhay. May kasamang libreng allowance ang modelo na binabayaran ng developer; pagkatapos niyon, ang sarili mong key. Walang ibinebenta; nasa patakaran sa privacy kung ano ang itinatago ng relay, at sa iyo ang Mga setting → Mga kontrol sa data.</string>
+    <string name="nm_welcome_feat_reach">Its own computer</string>
+    <string name="nm_welcome_feat_reach_sub">A Linux sandbox and a browser inside the app: it runs code, opens websites and fills in forms for you</string>
+    <string name="nm_welcome_notice">Nano Agent is free, open-source software (GPL-3.0). Your chats stay on this phone and go only to the AI provider you pick. There is nothing to sign up for.</string>
     <string name="nm_welcome_hands_title">Hayaan itong gamitin ang telepono mo</string>
     <string name="nm_welcome_hands_sub">Sa dalawang pahintulot, kaya nitong magbukas ng mga app, mag-tap at mag-type para sa iyo. Nananatili sa screen ang isang capsule na may bawat hakbang at isang button na Itigil; laging sa iyo ang mga login, password at code.</string>
     <string name="nm_welcome_hands_turn_on">I-on</string>
@@ -678,7 +678,7 @@
     <string name="nm_cloud_mode_password">Gamit ang password</string>
     <string name="nm_cloud_password">Password</string>
     <string name="nm_cloud_forgot_password">Nakalimutan ang password? Mag-sign in gamit ang code</string>
-    <string name="nm_cloud_identifier">Numero ng telepono sa mainland China o e-mail</string>
+    <string name="nm_cloud_identifier">Phone number or e-mail</string>
     <string name="nm_cloud_identifier_hint">you@example.com</string>
     <string name="nm_cloud_code">Code</string>
     <string name="nm_cloud_send_code">Ipadala ang code</string>
@@ -703,11 +703,11 @@
     <string name="nm_cloud_server_change_confirm">Ang key ng teleponong ito ay para sa kasalukuyang server. Mag-sign out muna rito, saka mag-sign in sa ibang server mula sa sign-in screen.</string>
 
     <!-- Text-message codes: said on the sign-in screen before asking, and for the relay's phone_region answer -->
-    <string name="nm_cloud_sms_region">Ang mga code sa text message ay umaabot lang sa mga numero sa mainland China. Gumamit na lang ng e-mail address.</string>
+    <string name="nm_cloud_sms_region">Use an e-mail address.</string>
     <string name="nm_cloud_fine_print">Itinatago ng relay ang isang account id, isang naka-mask na identifier, mga bilang ng paggamit at ang pangalan at itsura ng agent mo; kung ano pa, at ano ang maaari mong i-off, ay nasa patakaran sa privacy.</string>
-    <string name="nm_cloud_not_signed_in">Hindi naka-sign in</string>
-    <string name="nm_cloud_not_signed_in_sub">Mag-sign in gamit ang numero ng telepono o e-mail para sa libreng allowance. Mananatili kung ano ang mga sarili mong provider.</string>
-    <string name="nm_cloud_sign_in">Mag-sign in</string>
+    <string name="nm_cloud_not_signed_in">No account needed</string>
+    <string name="nm_cloud_not_signed_in_sub">Nano Agent has no sign-in. Add a key of your own under Settings › Providers.</string>
+    <string name="nm_cloud_sign_in">Add a provider</string>
     <string name="nm_cloud_channel_phone">Numero ng telepono</string>
     <string name="nm_cloud_channel_email">E-mail</string>
     <string name="nm_cloud_remaining">%1$s token ang natitira</string>
@@ -724,7 +724,7 @@
     <string name="nm_cloud_sign_out_sub">Babawiin ang key ng teleponong ito at aalisin ang Cloud provider; mananatili ang allowance sa account mo.</string>
     <string name="nm_cloud_sign_out_confirm">Aalisin sa teleponong ito ang Community Relay provider at ang mga modelo nito.</string>
     <string name="nm_cloud_row_remaining">%1$s ang natitira</string>
-    <string name="nm_cloud_row_sign_in">Mag-sign in</string>
+    <string name="nm_cloud_row_sign_in">Add a provider</string>
     <string name="nm_cloud_err_bad_identifier">Hindi mukhang e-mail address iyan.</string>
     <string name="nm_cloud_err_code_wrong">Maling code.</string>
     <string name="nm_cloud_err_code_expired">Paso na ang code na iyan; magpadala ng bago.</string>
@@ -764,7 +764,7 @@
     <string name="nm_cloud_err_hub_paused">Naka-pause muna ang ugnayan ng mga device sa relay na ito; gumagana pa rin ang bawat device nang mag-isa.</string>
     <string name="nm_refusal_relay_says">Sabi ng relay: %1$s</string>
     <string name="nm_refusal_new_chat">Bagong chat</string>
-    <string name="nm_refusal_sign_in">Mag-sign in</string>
+    <string name="nm_refusal_sign_in">Add a provider</string>
     <string name="nm_refusal_open_settings">Buksan ang Settings</string>
 
     <!-- 0.1.20: the account page -->
@@ -822,7 +822,7 @@
     <string name="nm_ways_add">Idagdag</string>
     <string name="nm_ways_add_named">Idagdag ang %1$s</string>
     <string name="nm_ways_get_key">Kumuha ng key</string>
-    <string name="nm_ways_sign_in">Mag-sign in</string>
+    <string name="nm_ways_sign_in">Add a provider</string>
     <string name="nm_ways_more">Higit pang provider</string>
     <string name="nm_ways_less">Mas kaunting provider</string>
     <string name="nm_ways_sub_title">Isang subscription na binabayaran mo na</string>
@@ -835,7 +835,7 @@
     <string name="nm_cap_pictures_unavailable">Kailangan ng mga larawan ng provider na may image model: Bailian, OpenAI, Gemini o OpenRouter.</string>
     <string name="nm_cap_clips_unavailable">Kailangan ng mga clip ng provider na may video model: Alibaba Cloud Bailian.</string>
     <string name="nm_cap_hands_unavailable">Kailangan ng mga kamay ng modelong nakakakita ng screen: Bailian, OpenRouter, OpenAI, Anthropic, Gemini, o anumang provider na may vision model.</string>
-    <string name="nm_cap_chat_unavailable">Kailangan ng chat ng provider na may chat model: magdagdag ng key, o mag-sign in.</string>
+    <string name="nm_cap_chat_unavailable">Chat needs a provider with chat models: add a key under Settings › Providers.</string>
     <string name="nm_ways_invite_title">Mag-imbita ng kaibigan: +¥%1$s para sa iyo at +¥%2$s para sa kanila, kapag ang bagong taong nag-sign up gamit ang link mo ay gumawa ng unang request.</string>
     <string name="nm_ways_invite_share">Ibahagi ang link</string>
     <string name="nm_ways_invite_copy">Kopyahin ang link</string>
@@ -860,7 +860,7 @@
     <string name="nm_data_delete_sub">Inaalis ang record ng mga chat ng account na ito at bawat training turn na itinago mula rito, naka-on man o naka-off ang switch ngayon. Ang pag-off ng switch ay nag-iiwan ng itinago hanggang burahin mo rito.</string>
     <string name="nm_data_delete_confirm">Aalisin sa server ang record ng mga chat mo at ang mga itinagong training turn. Hindi na ito maibabalik.</string>
     <string name="nm_data_deleted">Binura: %1$d turn ng record, %2$d file, %3$d training turn.</string>
-    <string name="nm_data_sign_in">Mag-sign in sa Community Relay para gamitin ito.</string>
+    <string name="nm_data_sign_in">Not used: Nano Agent keeps your chats on this phone.</string>
     <string name="nm_data_privacy">Patakaran sa privacy</string>
     <string name="nm_data_status_on">Naka-on</string>
     <string name="nm_data_status_off">Naka-off</string>
@@ -940,7 +940,7 @@
     <string name="nm_cloud_allowance_left">¥%1$s · $%2$s ang natitira</string>
     <string name="nm_cloud_allowance_why">¥%1$s sa simula, +¥%2$s para sa bawat kaibigang iimbitahin mo, at +¥%2$s para sa kanila; pagkatapos niyon, ang sarili mong key ang magpapatuloy sa modelo.</string>
     <string name="nm_cloud_tokens_line">%1$s token sa kabuuan · %2$s ngayong araw</string>
-    <string name="nm_cloud_notice_title">Libre, open source, non-profit</string>
+    <string name="nm_cloud_notice_title">Free and open source</string>
     <string name="nm_cloud_notice_closing">May nakitang bug, gustong feature, may patch? Ang GitHub repository ang lugar para doon.</string>
     <string name="nm_cloud_notice">Ang Nano Agent ay isang non-profit na open-source na proyekto ng komunidad: libre, habang-buhay. May kasamang libreng allowance ang modelo na binabayaran ng developer; pagkatapos niyon, ang sarili mong key. Walang ibinebenta; nasa patakaran sa privacy kung ano ang itinatago ng relay, at sa iyo ang Mga setting → Mga kontrol sa data. Burahin ang account kailan mo man gusto.</string>
 
@@ -969,7 +969,7 @@
     <string name="nm_devices_connected">Konektado</string>
     <string name="nm_devices_connecting">Kumokonekta…</string>
     <string name="nm_devices_off">Naka-off</string>
-    <string name="nm_devices_none">Wala pang ibang device. Sa computer mo, i-install ang Nano Agent Desktop at mag-sign in gamit ang parehong account; lalabas ito dito sa loob ng ilang segundo.</string>
+    <string name="nm_devices_none">Wala pang ibang device. Sa computer mo, i-install ang nanoMuse Desktop at mag-sign in gamit ang parehong account; lalabas ito dito sa loob ng ilang segundo.</string>
     <string name="nm_devices_online">online</string>
     <string name="nm_devices_offline">offline</string>
     <string name="nm_devices_web">Web console</string>
@@ -1144,7 +1144,7 @@
     <string name="nm_models_cloud_off_refused">Magdagdag muna ng sarili mong provider; kapag naka-off ang Community Relay, wala nang ibang makakasagot.</string>
     <string name="nm_chat_no_model">Walang modelong makakasagot ngayon. Pumili ng isa sa Mga Setting › Mga Modelo.</string>
     <string name="nm_cloud_provider_no_delete">Ang provider na ito ay ang iyong Community Relay account. I-off ito sa itaas para hindi na gamitin ang mga modelo nito; para mag-sign out, buksan ang Mga Setting › Community Relay.</string>
-    <string name="nm_welcome_own_key">Gamitin na lang ang sariling API key</string>
+    <string name="nm_welcome_own_key">Skip for now</string>
     <string name="nm_useit_title">Gamitin ito para sa</string>
     <string name="nm_useit_body_signed_out">Piliin kung ano ang dapat asikasuhin ng key na ito.</string>
     <string name="nm_useit_use">Gamitin</string>

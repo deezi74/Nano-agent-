@@ -605,9 +605,9 @@
     <string name="nm_pc_title">컴퓨터</string>
     <string name="nm_pc_none_short">없음</string>
     <string name="nm_pc_intro">여기서 말하면 컴퓨터에서 처리됩니다. 명령, 파일, 그쪽 브라우저의 페이지, 그쪽 화면 보기, 또는 그곳 nanoMuse에 맡기는 작업 전체. 휴대전화가 컴퓨터를 움직이며 그 반대는 없습니다. 모든 승인은 먼저 여기서 결정됩니다.</string>
-    <string name="nm_pc_hub_title">쉬운 방법: Nano Agent Desktop, 같은 계정</string>
-    <string name="nm_pc_hub_body">컴퓨터에 Nano Agent Desktop을 설치하고 이 휴대전화의 계정으로 로그인하세요. 몇 초 안에 계정 → 기기에 나타납니다.</string>
-    <string name="nm_pc_hub_download">Nano Agent Desktop 받기</string>
+    <string name="nm_pc_hub_title">쉬운 방법: nanoMuse Desktop, 같은 계정</string>
+    <string name="nm_pc_hub_body">컴퓨터에 nanoMuse Desktop을 설치하고 이 휴대전화의 계정으로 로그인하세요. 몇 초 안에 계정 → 기기에 나타납니다.</string>
+    <string name="nm_pc_hub_download">nanoMuse Desktop 받기</string>
     <string name="nm_pc_hub_account">계정과 기기</string>
     <string name="nm_pc_section_paired">이 계정의 컴퓨터</string>
     <string name="nm_pc_none">아직 컴퓨터가 없습니다</string>
@@ -620,7 +620,7 @@
     <string name="nm_pc_account_hint">이 휴대전화는 %1$s(으)로 로그인되어 있습니다. 컴퓨터도 같은 계정으로 로그인해야 합니다.</string>
     <string name="nm_pc_checking">확인 중…</string>
     <string name="nm_pc_answering">%1$s이(가) 응답합니다</string>
-    <string name="nm_pc_not_answering">%1$s이(가) 응답하지 않습니다. 그곳에서 Nano Agent Desktop이 아직 실행 중인가요?</string>
+    <string name="nm_pc_not_answering">%1$s이(가) 응답하지 않습니다. 그곳에서 nanoMuse Desktop이 아직 실행 중인가요?</string>
 
     <!-- the approval card -->
     <string name="nm_risk_desc_on_computer">이 휴대전화가 아니라 컴퓨터 “%1$s”에서.</string>
@@ -643,9 +643,9 @@
     <string name="nm_setup_own_key">내 API 키가 있어요</string>
 
     <!-- nanoMuse: the first-run pages -->
-    <string name="nm_welcome_tagline">내가 가진 모든 기기를 위한 오픈 소스 개인 에이전트.</string>
-    <string name="nm_welcome_email">로그인(무료)</string>
-    <string name="nm_welcome_fine_print">계정 하나가 기기들을 묶어 주고 무료 모델 사용량을 담습니다. 요금은 없습니다. 내 API 키는 바로 다음에 추가할 수 있습니다.</string>
+    <string name="nm_welcome_tagline">Your pocket AI agent. It does things, not just answers.</string>
+    <string name="nm_welcome_email">Add your AI provider</string>
+    <string name="nm_welcome_fine_print">No account and no sign-in. Paste a key from OpenRouter, OpenAI, Anthropic, Google or xAI, or point it at your own FreeLLMAPI or Ollama for free models.</string>
     <string name="nm_setup_source_title">어떤 모델이 답할까요?</string>
     <string name="nm_setup_source_sub">계정에 이미 하나가 딸려 있습니다. 내 API 키도 추가하고 언제든 바꿀 수 있습니다.</string>
     <string name="nm_setup_source_cloud">Community Relay 모델 사용</string>
@@ -660,9 +660,9 @@
     <string name="nm_welcome_feat_chat_sub">쓸 만한 모델, 이미지와 동영상 생성, 도구, 스킬, 메모리. 모두 휴대전화에서</string>
     <string name="nm_welcome_feat_hands">손: 휴대전화를 직접 씁니다</string>
     <string name="nm_welcome_feat_hands_sub">기차표를 예매하고, 식사를 주문하고, 앱에서 무언가를 찾아봅니다. 지켜보다가 언제든 멈출 수 있습니다</string>
-    <string name="nm_welcome_feat_reach">원격: 내 컴퓨터를 여기서</string>
-    <string name="nm_welcome_feat_reach_sub">Mac, Windows, Linux 컴퓨터에 Nano Agent Desktop을 설치하고 같은 계정으로 로그인하면 휴대전화에서 일을 맡길 수 있습니다</string>
-    <string name="nm_welcome_notice">nanoMuse는 비영리 오픈 소스 커뮤니티 프로젝트입니다: 영원히 무료. 모델에는 개발자가 부담하는 무료 사용량이 딸려 있고, 그다음은 내 키입니다. 아무것도 팔지 않습니다. 릴레이가 보관하는 것은 개인정보 처리방침에 있고, 설정 → 데이터 관리는 내 것입니다.</string>
+    <string name="nm_welcome_feat_reach">Its own computer</string>
+    <string name="nm_welcome_feat_reach_sub">A Linux sandbox and a browser inside the app: it runs code, opens websites and fills in forms for you</string>
+    <string name="nm_welcome_notice">Nano Agent is free, open-source software (GPL-3.0). Your chats stay on this phone and go only to the AI provider you pick. There is nothing to sign up for.</string>
     <string name="nm_welcome_hands_title">휴대전화를 쓰게 허용</string>
     <string name="nm_welcome_hands_sub">권한 두 개만 있으면 앱을 열고, 탭하고, 대신 입력할 수 있습니다. 각 단계와 중지 버튼이 있는 캡슐이 화면에 머뭅니다. 로그인, 비밀번호, 인증 코드는 항상 직접 합니다.</string>
     <string name="nm_welcome_hands_turn_on">켜기</string>
@@ -675,7 +675,7 @@
     <string name="nm_cloud_mode_password">비밀번호로</string>
     <string name="nm_cloud_password">비밀번호</string>
     <string name="nm_cloud_forgot_password">비밀번호를 잊으셨나요? 코드로 로그인</string>
-    <string name="nm_cloud_identifier">중국 본토 휴대전화 번호 또는 이메일</string>
+    <string name="nm_cloud_identifier">Phone number or e-mail</string>
     <string name="nm_cloud_identifier_hint">you@example.com</string>
     <string name="nm_cloud_code">코드</string>
     <string name="nm_cloud_send_code">코드 보내기</string>
@@ -700,11 +700,11 @@
     <string name="nm_cloud_server_change_confirm">이 휴대전화의 키는 현재 서버의 것입니다. 먼저 여기서 로그아웃한 뒤, 로그인 화면에서 다른 서버에 로그인하세요.</string>
 
     <!-- Text-message codes: said on the sign-in screen before asking, and for the relay's phone_region answer -->
-    <string name="nm_cloud_sms_region">문자 인증 코드는 중국 본토 번호로만 전송됩니다. 대신 이메일 주소를 사용하세요.</string>
+    <string name="nm_cloud_sms_region">Use an e-mail address.</string>
     <string name="nm_cloud_fine_print">릴레이는 계정 ID, 가려진 식별자, 사용량 집계, 에이전트의 이름과 모습을 보관합니다. 그 밖의 것과 직접 끌 수 있는 것은 개인정보 처리방침에 있습니다.</string>
-    <string name="nm_cloud_not_signed_in">로그인하지 않음</string>
-    <string name="nm_cloud_not_signed_in_sub">휴대전화 번호나 이메일로 로그인하면 무료 사용량을 받습니다. 내 제공자는 그대로 유지됩니다.</string>
-    <string name="nm_cloud_sign_in">로그인</string>
+    <string name="nm_cloud_not_signed_in">No account needed</string>
+    <string name="nm_cloud_not_signed_in_sub">Nano Agent has no sign-in. Add a key of your own under Settings › Providers.</string>
+    <string name="nm_cloud_sign_in">Add a provider</string>
     <string name="nm_cloud_channel_phone">휴대전화 번호</string>
     <string name="nm_cloud_channel_email">이메일</string>
     <string name="nm_cloud_remaining">토큰 %1$s개 남음</string>
@@ -721,7 +721,7 @@
     <string name="nm_cloud_sign_out_sub">이 휴대전화의 키가 취소되고 Cloud 제공자가 제거됩니다. 사용량은 계정에 남습니다.</string>
     <string name="nm_cloud_sign_out_confirm">Community Relay 제공자와 그 모델이 이 휴대전화에서 제거됩니다.</string>
     <string name="nm_cloud_row_remaining">%1$s 남음</string>
-    <string name="nm_cloud_row_sign_in">로그인</string>
+    <string name="nm_cloud_row_sign_in">Add a provider</string>
     <string name="nm_cloud_err_bad_identifier">이메일 주소로 보이지 않습니다.</string>
     <string name="nm_cloud_err_code_wrong">코드가 틀렸습니다.</string>
     <string name="nm_cloud_err_code_expired">코드가 만료되었습니다. 새로 보내세요.</string>
@@ -761,7 +761,7 @@
     <string name="nm_cloud_err_hub_paused">이 릴레이의 기기 연결이 당분간 중지되었습니다. 각 기기는 각자 계속 작동합니다.</string>
     <string name="nm_refusal_relay_says">릴레이의 설명: %1$s</string>
     <string name="nm_refusal_new_chat">새 채팅</string>
-    <string name="nm_refusal_sign_in">로그인</string>
+    <string name="nm_refusal_sign_in">Add a provider</string>
     <string name="nm_refusal_open_settings">설정 열기</string>
 
     <!-- 0.1.20: the account page -->
@@ -819,7 +819,7 @@
     <string name="nm_ways_add">추가</string>
     <string name="nm_ways_add_named">%1$s 추가</string>
     <string name="nm_ways_get_key">키 받기</string>
-    <string name="nm_ways_sign_in">로그인</string>
+    <string name="nm_ways_sign_in">Add a provider</string>
     <string name="nm_ways_more">제공자 더 보기</string>
     <string name="nm_ways_less">접기</string>
     <string name="nm_ways_sub_title">이미 결제 중인 구독</string>
@@ -832,7 +832,7 @@
     <string name="nm_cap_pictures_unavailable">그림에는 이미지 모델이 있는 제공자가 필요합니다: 바이롄, OpenAI, Gemini 또는 OpenRouter.</string>
     <string name="nm_cap_clips_unavailable">클립에는 비디오 모델이 있는 제공자가 필요합니다: Alibaba Cloud 바이롄.</string>
     <string name="nm_cap_hands_unavailable">핸즈에는 화면을 보는 모델이 필요합니다: 바이롄, OpenRouter, OpenAI, Anthropic, Gemini 또는 비전 모델이 있는 제공자.</string>
-    <string name="nm_cap_chat_unavailable">채팅에는 채팅 모델이 있는 제공자가 필요합니다: 키를 추가하거나 로그인하세요.</string>
+    <string name="nm_cap_chat_unavailable">Chat needs a provider with chat models: add a key under Settings › Providers.</string>
     <string name="nm_ways_invite_title">친구 초대: 내 링크로 가입한 사람이 첫 요청을 보낼 때마다 나에게 +¥%1$s, 그 사람에게 +¥%2$s.</string>
     <string name="nm_ways_invite_share">링크 공유</string>
     <string name="nm_ways_invite_copy">링크 복사</string>
@@ -857,7 +857,7 @@
     <string name="nm_data_delete_sub">이 계정 채팅의 기록과 보관된 모든 학습 턴을 삭제합니다. 스위치가 지금 켜져 있든 꺼져 있든 상관없습니다. 스위치를 끄기만 하면 여기서 삭제할 때까지 보관된 것은 남습니다.</string>
     <string name="nm_data_delete_confirm">채팅 기록과 보관된 학습 턴이 서버에서 삭제됩니다. 되돌릴 수 없습니다.</string>
     <string name="nm_data_deleted">삭제됨: 기록 %1$d턴, 파일 %2$d개, 학습 턴 %3$d턴.</string>
-    <string name="nm_data_sign_in">쓰려면 Community Relay에 로그인하세요.</string>
+    <string name="nm_data_sign_in">Not used: Nano Agent keeps your chats on this phone.</string>
     <string name="nm_data_privacy">개인정보 처리방침</string>
     <string name="nm_data_status_on">켬</string>
     <string name="nm_data_status_off">끔</string>
@@ -937,7 +937,7 @@
     <string name="nm_cloud_allowance_left">¥%1$s · $%2$s 남음</string>
     <string name="nm_cloud_allowance_why">시작할 때 ¥%1$s, 초대한 친구마다 +¥%2$s, 그 친구에게도 +¥%2$s. 그다음은 내 키로 모델을 계속 씁니다.</string>
     <string name="nm_cloud_tokens_line">토큰 총 %1$s개 · 오늘 %2$s개</string>
-    <string name="nm_cloud_notice_title">무료, 오픈 소스, 비영리</string>
+    <string name="nm_cloud_notice_title">Free and open source</string>
     <string name="nm_cloud_notice_closing">버그를 찾았거나, 원하는 기능이 있거나, 패치가 있나요? GitHub 저장소가 그 자리입니다.</string>
     <string name="nm_cloud_notice">nanoMuse는 비영리 오픈 소스 커뮤니티 프로젝트입니다: 영원히 무료. 모델에는 개발자가 부담하는 무료 사용량이 딸려 있고, 그다음은 내 키입니다. 아무것도 팔지 않습니다. 릴레이가 보관하는 것은 개인정보 처리방침에 있고, 설정 → 데이터 관리는 내 것입니다. 계정은 원할 때 언제든 삭제하세요.</string>
 
@@ -965,7 +965,7 @@
     <string name="nm_devices_connected">연결됨</string>
     <string name="nm_devices_connecting">연결 중…</string>
     <string name="nm_devices_off">끔</string>
-    <string name="nm_devices_none">아직 다른 기기가 없습니다. 컴퓨터에 Nano Agent Desktop을 설치하고 같은 계정으로 로그인하세요. 몇 초 안에 여기에 나타납니다.</string>
+    <string name="nm_devices_none">아직 다른 기기가 없습니다. 컴퓨터에 nanoMuse Desktop을 설치하고 같은 계정으로 로그인하세요. 몇 초 안에 여기에 나타납니다.</string>
     <string name="nm_devices_online">온라인</string>
     <string name="nm_devices_offline">오프라인</string>
     <string name="nm_devices_web">웹 콘솔</string>
@@ -1140,7 +1140,7 @@
     <string name="nm_models_cloud_off_refused">먼저 자신의 제공자를 추가하세요. Community Relay를 끄면 답할 수 있는 모델이 없습니다.</string>
     <string name="nm_chat_no_model">지금 답할 수 있는 모델이 없습니다. 설정 › 모델에서 하나를 고르세요.</string>
     <string name="nm_cloud_provider_no_delete">이 제공자는 Community Relay 계정 자체입니다. 모델 사용을 멈추려면 위 스위치를 끄고, 로그아웃하려면 설정 › Community Relay를 여세요.</string>
-    <string name="nm_welcome_own_key">내 API 키 사용</string>
+    <string name="nm_welcome_own_key">Skip for now</string>
     <string name="nm_useit_title">어디에 쓸지</string>
     <string name="nm_useit_body_signed_out">이 키가 맡을 일을 고르세요.</string>
     <string name="nm_useit_use">쓰기</string>

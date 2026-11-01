@@ -136,7 +136,7 @@ object FirstRunSetup {
      * step and the hand-off into the first conversation is deliberate.
      */
     fun needed(signedIn: Boolean, hasProviders: Boolean, hasSessions: Boolean, done: Boolean): Boolean =
-        (!signedIn && !hasProviders) || (!hasSessions && !done)
+        !done && ((!signedIn && !hasProviders) || !hasSessions) // Nano Agent: Skip is final
 
     enum class Stage { WELCOME, PASSWORD, SOURCE, MODELS, HANDS, MEET }
 
@@ -228,8 +228,9 @@ fun FirstRunSetupScreen(
             ) { current ->
                 when (current) {
                     FirstRunSetup.Stage.WELCOME -> WelcomePage(
-                        onSignIn = onSignIn,
-                        onOwnKey = { FirstRunSetup.markSourceChosen(context); sourceChosen = true; onAddProvider() },
+                        // Nano Agent: no sign-in. Primary: add a provider; secondary: skip.
+                        onSignIn = { FirstRunSetup.markSourceChosen(context); sourceChosen = true; onAddProvider() },
+                        onOwnKey = onStart,
                     )
                     FirstRunSetup.Stage.PASSWORD -> PasswordPage(
                         onDone = { NanoMuseCloud.clearFreshAccount(context); passwordAnswered = true; fresh = false },

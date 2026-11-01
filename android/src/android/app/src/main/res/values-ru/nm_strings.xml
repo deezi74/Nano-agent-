@@ -614,9 +614,9 @@
     <string name="nm_pc_title">Компьютеры</string>
     <string name="nm_pc_none_short">Нет</string>
     <string name="nm_pc_intro">Скажите здесь, и это сделано на вашем компьютере: команда, файл, страница в его браузере, взгляд на его экран или целая задача для тамошнего Nano Agent. Телефон управляет компьютером, никогда наоборот; каждое подтверждение сначала решается здесь.</string>
-    <string name="nm_pc_hub_title">Простой путь: Nano Agent Desktop, тот же аккаунт</string>
-    <string name="nm_pc_hub_body">Установите Nano Agent Desktop на компьютер и войдите с аккаунтом этого телефона; он появится в Аккаунт → Устройства за несколько секунд.</string>
-    <string name="nm_pc_hub_download">Скачать Nano Agent Desktop</string>
+    <string name="nm_pc_hub_title">Простой путь: nanoMuse Desktop, тот же аккаунт</string>
+    <string name="nm_pc_hub_body">Установите nanoMuse Desktop на компьютер и войдите с аккаунтом этого телефона; он появится в Аккаунт → Устройства за несколько секунд.</string>
+    <string name="nm_pc_hub_download">Скачать nanoMuse Desktop</string>
     <string name="nm_pc_hub_account">Аккаунт и устройства</string>
     <string name="nm_pc_section_paired">Компьютеры на этом аккаунте</string>
     <string name="nm_pc_none">Компьютеров пока нет</string>
@@ -629,7 +629,7 @@
     <string name="nm_pc_account_hint">Этот телефон вошёл как %1$s; компьютер должен войти с тем же аккаунтом.</string>
     <string name="nm_pc_checking">Проверяем…</string>
     <string name="nm_pc_answering">%1$s отвечает</string>
-    <string name="nm_pc_not_answering">%1$s не отвечает. Nano Agent Desktop там ещё запущен?</string>
+    <string name="nm_pc_not_answering">%1$s не отвечает. nanoMuse Desktop там ещё запущен?</string>
 
     <!-- the approval card -->
     <string name="nm_risk_desc_on_computer">На компьютере «%1$s», не на этом телефоне.</string>
@@ -652,9 +652,9 @@
     <string name="nm_setup_own_key">У меня есть свой API-ключ</string>
 
     <!-- nanoMuse: the first-run pages -->
-    <string name="nm_welcome_tagline">Личный агент с открытым кодом для каждого вашего устройства.</string>
-    <string name="nm_welcome_email">Войти (бесплатно)</string>
-    <string name="nm_welcome_fine_print">Один аккаунт связывает ваши устройства и несёт бесплатное использование модели; ничего не списывается. Свой API-ключ можно добавить сразу после.</string>
+    <string name="nm_welcome_tagline">Your pocket AI agent. It does things, not just answers.</string>
+    <string name="nm_welcome_email">Add your AI provider</string>
+    <string name="nm_welcome_fine_print">No account and no sign-in. Paste a key from OpenRouter, OpenAI, Anthropic, Google or xAI, or point it at your own FreeLLMAPI or Ollama for free models.</string>
     <string name="nm_setup_source_title">Какая модель отвечает?</string>
     <string name="nm_setup_source_sub">Ваш аккаунт уже даёт одну. Можно добавить и свой API-ключ и переключаться в любой момент.</string>
     <string name="nm_setup_source_cloud">Использовать модель Community Relay</string>
@@ -669,9 +669,9 @@
     <string name="nm_welcome_feat_chat_sub">Способная модель, генерация изображений и видео, инструменты, навыки и память, на вашем телефоне</string>
     <string name="nm_welcome_feat_hands">Руки: он пользуется вашим телефоном</string>
     <string name="nm_welcome_feat_hands_sub">Берёт билет на поезд, заказывает еду, ищет что-то в приложении; вы смотрите и можете остановить в любой момент</string>
-    <string name="nm_welcome_feat_reach">Связь: ваши компьютеры, отсюда</string>
-    <string name="nm_welcome_feat_reach_sub">Установите Nano Agent Desktop на Mac, Windows или Linux, войдите с той же учётной записью и давайте ему работу с телефона</string>
-    <string name="nm_welcome_notice">Nano Agent является некоммерческим проектом сообщества с открытым кодом, бесплатным навсегда. Модель идёт с бесплатным лимитом, который оплачивает разработчик; дальше нужен ваш собственный ключ. Ничего не продаётся; что хранит релей, написано в политике конфиденциальности, а Настройки → Управление данными в ваших руках.</string>
+    <string name="nm_welcome_feat_reach">Its own computer</string>
+    <string name="nm_welcome_feat_reach_sub">A Linux sandbox and a browser inside the app: it runs code, opens websites and fills in forms for you</string>
+    <string name="nm_welcome_notice">Nano Agent is free, open-source software (GPL-3.0). Your chats stay on this phone and go only to the AI provider you pick. There is nothing to sign up for.</string>
     <string name="nm_welcome_hands_title">Разрешите ему пользоваться телефоном</string>
     <string name="nm_welcome_hands_sub">С двумя разрешениями он может открывать приложения, нажимать и печатать за вас. Капсула с каждым шагом и кнопкой «Стоп» остаётся на экране; входы, пароли и коды всегда за вами.</string>
     <string name="nm_welcome_hands_turn_on">Включить</string>
@@ -684,7 +684,7 @@
     <string name="nm_cloud_mode_password">По паролю</string>
     <string name="nm_cloud_password">Пароль</string>
     <string name="nm_cloud_forgot_password">Забыли пароль? Войдите по коду</string>
-    <string name="nm_cloud_identifier">Номер телефона материкового Китая или e-mail</string>
+    <string name="nm_cloud_identifier">Phone number or e-mail</string>
     <string name="nm_cloud_identifier_hint">you@example.com</string>
     <string name="nm_cloud_code">Код</string>
     <string name="nm_cloud_send_code">Отправить код</string>
@@ -709,11 +709,11 @@
     <string name="nm_cloud_server_change_confirm">Ключ этого телефона принадлежит текущему серверу. Сначала выйдите здесь, затем войдите на другой сервер с экрана входа.</string>
 
     <!-- Text-message codes: said on the sign-in screen before asking, and for the relay's phone_region answer -->
-    <string name="nm_cloud_sms_region">Коды по SMS приходят только на номера материкового Китая. Используйте вместо этого адрес электронной почты.</string>
+    <string name="nm_cloud_sms_region">Use an e-mail address.</string>
     <string name="nm_cloud_fine_print">Релей хранит идентификатор аккаунта, замаскированный идентификатор, счётчики использования, а также имя и образ вашего агента; что ещё хранится и что вы можете отключить, описано в политике конфиденциальности.</string>
-    <string name="nm_cloud_not_signed_in">Вход не выполнен</string>
-    <string name="nm_cloud_not_signed_in_sub">Войдите по номеру телефона или e-mail, чтобы получить бесплатный лимит. Ваши собственные провайдеры остаются как есть.</string>
-    <string name="nm_cloud_sign_in">Войти</string>
+    <string name="nm_cloud_not_signed_in">No account needed</string>
+    <string name="nm_cloud_not_signed_in_sub">Nano Agent has no sign-in. Add a key of your own under Settings › Providers.</string>
+    <string name="nm_cloud_sign_in">Add a provider</string>
     <string name="nm_cloud_channel_phone">Номер телефона</string>
     <string name="nm_cloud_channel_email">E-mail</string>
     <string name="nm_cloud_remaining">Осталось токенов: %1$s</string>
@@ -730,7 +730,7 @@
     <string name="nm_cloud_sign_out_sub">Ключ этого телефона отзывается, провайдер Cloud удаляется; лимит остаётся на вашем аккаунте.</string>
     <string name="nm_cloud_sign_out_confirm">Провайдер Community Relay и его модели будут удалены с этого телефона.</string>
     <string name="nm_cloud_row_remaining">Осталось %1$s</string>
-    <string name="nm_cloud_row_sign_in">Войти</string>
+    <string name="nm_cloud_row_sign_in">Add a provider</string>
     <string name="nm_cloud_err_bad_identifier">Это не похоже на адрес электронной почты.</string>
     <string name="nm_cloud_err_code_wrong">Неверный код.</string>
     <string name="nm_cloud_err_code_expired">Срок действия кода истёк; отправьте новый.</string>
@@ -770,7 +770,7 @@
     <string name="nm_cloud_err_hub_paused">Связь между устройствами на этом релее пока приостановлена; каждое устройство работает само по себе.</string>
     <string name="nm_refusal_relay_says">Релей сообщает: %1$s</string>
     <string name="nm_refusal_new_chat">Новый чат</string>
-    <string name="nm_refusal_sign_in">Войти</string>
+    <string name="nm_refusal_sign_in">Add a provider</string>
     <string name="nm_refusal_open_settings">Открыть настройки</string>
 
     <!-- 0.1.20: the account page -->
@@ -828,7 +828,7 @@
     <string name="nm_ways_add">Добавить</string>
     <string name="nm_ways_add_named">Добавить %1$s</string>
     <string name="nm_ways_get_key">Получить ключ</string>
-    <string name="nm_ways_sign_in">Войти</string>
+    <string name="nm_ways_sign_in">Add a provider</string>
     <string name="nm_ways_more">Ещё провайдеры</string>
     <string name="nm_ways_less">Свернуть</string>
     <string name="nm_ways_sub_title">Подписка, за которую вы уже платите</string>
@@ -841,7 +841,7 @@
     <string name="nm_cap_pictures_unavailable">Для картинок нужен провайдер с моделями изображений: Bailian, OpenAI, Gemini или OpenRouter.</string>
     <string name="nm_cap_clips_unavailable">Для клипов нужен провайдер с видеомоделями: Alibaba Cloud Bailian.</string>
     <string name="nm_cap_hands_unavailable">Рукам нужна модель, которая видит экран: Bailian, OpenRouter, OpenAI, Anthropic, Gemini или любой провайдер с vision-моделями.</string>
-    <string name="nm_cap_chat_unavailable">Для чата нужен провайдер с чат-моделями: добавьте ключ или войдите.</string>
+    <string name="nm_cap_chat_unavailable">Chat needs a provider with chat models: add a key under Settings › Providers.</string>
     <string name="nm_ways_invite_title">Пригласите друга: +¥%1$s вам и +¥%2$s ему, как только новый человек, зарегистрировавшийся по вашей ссылке, сделает первый запрос.</string>
     <string name="nm_ways_invite_share">Поделиться ссылкой</string>
     <string name="nm_ways_invite_copy">Копировать ссылку</string>
@@ -866,7 +866,7 @@
     <string name="nm_data_delete_sub">Удаляет запись чатов этого аккаунта и каждую сохранённую от него обучающую реплику, включён переключатель сейчас или нет. Выключение переключателя оставляет сохранённое, пока вы не удалите его здесь.</string>
     <string name="nm_data_delete_confirm">Запись ваших чатов и сохранённые обучающие реплики удаляются с сервера. Это нельзя отменить.</string>
     <string name="nm_data_deleted">Удалено: реплик записи %1$d, файлов %2$d, обучающих реплик %3$d.</string>
-    <string name="nm_data_sign_in">Войдите в Community Relay, чтобы этим пользоваться.</string>
+    <string name="nm_data_sign_in">Not used: Nano Agent keeps your chats on this phone.</string>
     <string name="nm_data_privacy">Политика конфиденциальности</string>
     <string name="nm_data_status_on">Вкл.</string>
     <string name="nm_data_status_off">Выкл.</string>
@@ -946,7 +946,7 @@
     <string name="nm_cloud_allowance_left">Осталось ¥%1$s · $%2$s</string>
     <string name="nm_cloud_allowance_why">¥%1$s на старте, +¥%2$s за каждого приглашённого друга, и +¥%2$s ему; дальше модель работает на вашем собственном ключе.</string>
     <string name="nm_cloud_tokens_line">Токенов всего: %1$s · сегодня: %2$s</string>
-    <string name="nm_cloud_notice_title">Бесплатно, открытый код, некоммерческий</string>
+    <string name="nm_cloud_notice_title">Free and open source</string>
     <string name="nm_cloud_notice_closing">Нашли ошибку, хотите функцию, есть патч? Репозиторий на GitHub и есть то самое место.</string>
     <string name="nm_cloud_notice">Nano Agent является некоммерческим проектом сообщества с открытым кодом, бесплатным навсегда. Модель идёт с бесплатным лимитом, который оплачивает разработчик; дальше нужен ваш собственный ключ. Ничего не продаётся; что хранит релей, написано в политике конфиденциальности, а Настройки → Управление данными в ваших руках. Удалить аккаунт можно когда угодно.</string>
 
@@ -977,7 +977,7 @@
     <string name="nm_devices_connected">Подключено</string>
     <string name="nm_devices_connecting">Подключаемся…</string>
     <string name="nm_devices_off">Выкл.</string>
-    <string name="nm_devices_none">Других устройств пока нет. Установите на компьютер Nano Agent Desktop и войдите с тем же аккаунтом; он появится здесь за несколько секунд.</string>
+    <string name="nm_devices_none">Других устройств пока нет. Установите на компьютер nanoMuse Desktop и войдите с тем же аккаунтом; он появится здесь за несколько секунд.</string>
     <string name="nm_devices_online">в сети</string>
     <string name="nm_devices_offline">не в сети</string>
     <string name="nm_devices_web">Веб-консоль</string>
@@ -1152,7 +1152,7 @@
     <string name="nm_models_cloud_off_refused">Сначала добавьте собственного провайдера; с выключенным Community Relay отвечать было бы нечему.</string>
     <string name="nm_chat_no_model">Сейчас ни одна модель не может ответить. Выберите одну в Настройки › Модели.</string>
     <string name="nm_cloud_provider_no_delete">Этот провайдер и есть ваш аккаунт Community Relay. Выключите его выше, чтобы не использовать его модели; чтобы выйти, откройте Настройки › Community Relay.</string>
-    <string name="nm_welcome_own_key">Использовать свой ключ API</string>
+    <string name="nm_welcome_own_key">Skip for now</string>
     <string name="nm_useit_title">Для чего использовать</string>
     <string name="nm_useit_body_signed_out">Выберите, чем будет заниматься этот ключ.</string>
     <string name="nm_useit_use">Использовать</string>

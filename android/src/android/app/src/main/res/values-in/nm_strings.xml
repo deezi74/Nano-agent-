@@ -605,9 +605,9 @@
     <string name="nm_pc_title">Komputer</string>
     <string name="nm_pc_none_short">Tidak ada</string>
     <string name="nm_pc_intro">Ucapkan di sini, dikerjakan di komputermu: perintah, file, halaman di browser-nya, melihat layarnya, atau satu tugas utuh untuk Nano Agent di sana. Ponsel yang mengendalikan komputer, tidak pernah sebaliknya; setiap persetujuan diputuskan di sini dulu.</string>
-    <string name="nm_pc_hub_title">Cara mudah: Nano Agent Desktop, akun yang sama</string>
-    <string name="nm_pc_hub_body">Pasang Nano Agent Desktop di komputer dan masuk dengan akun ponsel ini; komputer muncul di Akun → Perangkat dalam hitungan detik.</string>
-    <string name="nm_pc_hub_download">Dapatkan Nano Agent Desktop</string>
+    <string name="nm_pc_hub_title">Cara mudah: nanoMuse Desktop, akun yang sama</string>
+    <string name="nm_pc_hub_body">Pasang nanoMuse Desktop di komputer dan masuk dengan akun ponsel ini; komputer muncul di Akun → Perangkat dalam hitungan detik.</string>
+    <string name="nm_pc_hub_download">Dapatkan nanoMuse Desktop</string>
     <string name="nm_pc_hub_account">Akun dan perangkat</string>
     <string name="nm_pc_section_paired">Komputer di akun ini</string>
     <string name="nm_pc_none">Belum ada komputer</string>
@@ -620,7 +620,7 @@
     <string name="nm_pc_account_hint">Ponsel ini masuk sebagai %1$s; komputer harus masuk dengan akun yang sama.</string>
     <string name="nm_pc_checking">Memeriksa…</string>
     <string name="nm_pc_answering">%1$s menjawab</string>
-    <string name="nm_pc_not_answering">%1$s tidak menjawab. Apakah Nano Agent Desktop masih berjalan di sana?</string>
+    <string name="nm_pc_not_answering">%1$s tidak menjawab. Apakah nanoMuse Desktop masih berjalan di sana?</string>
 
     <!-- the approval card -->
     <string name="nm_risk_desc_on_computer">Di komputer “%1$s”, bukan di ponsel ini.</string>
@@ -643,9 +643,9 @@
     <string name="nm_setup_own_key">Aku punya kunci API sendiri</string>
 
     <!-- nanoMuse: the first-run pages -->
-    <string name="nm_welcome_tagline">Agen pribadi open source untuk setiap perangkat yang kamu miliki.</string>
-    <string name="nm_welcome_email">Masuk (gratis)</string>
-    <string name="nm_welcome_fine_print">Satu akun menyatukan perangkatmu dan membawa pemakaian model gratis; tidak ada tagihan. Kunci API-mu sendiri bisa ditambahkan setelahnya.</string>
+    <string name="nm_welcome_tagline">Your pocket AI agent. It does things, not just answers.</string>
+    <string name="nm_welcome_email">Add your AI provider</string>
+    <string name="nm_welcome_fine_print">No account and no sign-in. Paste a key from OpenRouter, OpenAI, Anthropic, Google or xAI, or point it at your own FreeLLMAPI or Ollama for free models.</string>
     <string name="nm_setup_source_title">Model mana yang menjawab?</string>
     <string name="nm_setup_source_sub">Akunmu sudah membawa satu. Kamu juga bisa menambahkan kunci API sendiri dan berpindah kapan saja.</string>
     <string name="nm_setup_source_cloud">Pakai model Community Relay</string>
@@ -660,9 +660,9 @@
     <string name="nm_welcome_feat_chat_sub">Model yang cakap, pembuatan gambar dan video, alat, skill dan memori, di ponselmu</string>
     <string name="nm_welcome_feat_hands">Tangan: ia memakai ponselmu</string>
     <string name="nm_welcome_feat_hands_sub">Memesan kereta, memesan makanan, mencari sesuatu di aplikasi; kamu mengawasi, dan bisa menghentikannya kapan saja</string>
-    <string name="nm_welcome_feat_reach">Jangkauan: komputermu, dari sini</string>
-    <string name="nm_welcome_feat_reach_sub">Pasang Nano Agent Desktop di mesin Mac, Windows atau Linux, masuk dengan akun yang sama, lalu beri pekerjaan dari ponsel</string>
-    <string name="nm_welcome_notice">Nano Agent adalah proyek komunitas open source nirlaba: gratis, selamanya. Modelnya datang dengan kuota gratis yang dibayar pengembang; setelah itu, kuncimu sendiri. Tidak ada yang dijual; apa yang disimpan relay ada di kebijakan privasi, dan Pengaturan → Kontrol data ada di tanganmu.</string>
+    <string name="nm_welcome_feat_reach">Its own computer</string>
+    <string name="nm_welcome_feat_reach_sub">A Linux sandbox and a browser inside the app: it runs code, opens websites and fills in forms for you</string>
+    <string name="nm_welcome_notice">Nano Agent is free, open-source software (GPL-3.0). Your chats stay on this phone and go only to the AI provider you pick. There is nothing to sign up for.</string>
     <string name="nm_welcome_hands_title">Izinkan ia memakai ponselmu</string>
     <string name="nm_welcome_hands_sub">Dengan dua izin ia bisa membuka aplikasi, mengetuk dan mengetik untukmu. Kapsul dengan setiap langkah dan tombol Berhenti tetap ada di layar; login, kata sandi dan kode selalu milikmu.</string>
     <string name="nm_welcome_hands_turn_on">Nyalakan</string>
@@ -675,7 +675,7 @@
     <string name="nm_cloud_mode_password">Dengan kata sandi</string>
     <string name="nm_cloud_password">Kata sandi</string>
     <string name="nm_cloud_forgot_password">Lupa kata sandi? Masuk dengan kode</string>
-    <string name="nm_cloud_identifier">Nomor ponsel Tiongkok daratan atau e-mail</string>
+    <string name="nm_cloud_identifier">Phone number or e-mail</string>
     <string name="nm_cloud_identifier_hint">kamu@example.com</string>
     <string name="nm_cloud_code">Kode</string>
     <string name="nm_cloud_send_code">Kirim kode</string>
@@ -700,11 +700,11 @@
     <string name="nm_cloud_server_change_confirm">Kunci ponsel ini milik server saat ini. Keluar dulu di sini, lalu masuk ke server lain dari layar masuk.</string>
 
     <!-- Text-message codes: said on the sign-in screen before asking, and for the relay's phone_region answer -->
-    <string name="nm_cloud_sms_region">Kode SMS hanya sampai ke nomor Tiongkok daratan. Gunakan alamat e-mail saja.</string>
+    <string name="nm_cloud_sms_region">Use an e-mail address.</string>
     <string name="nm_cloud_fine_print">Relay menyimpan id akun, pengenal yang disamarkan, jumlah pemakaian serta nama dan tampilan agenmu; selebihnya, dan apa yang bisa kamu matikan, ada di kebijakan privasi.</string>
-    <string name="nm_cloud_not_signed_in">Belum masuk</string>
-    <string name="nm_cloud_not_signed_in_sub">Masuk dengan nomor ponsel atau e-mail untuk kuota gratis. Penyediamu sendiri tetap seperti semula.</string>
-    <string name="nm_cloud_sign_in">Masuk</string>
+    <string name="nm_cloud_not_signed_in">No account needed</string>
+    <string name="nm_cloud_not_signed_in_sub">Nano Agent has no sign-in. Add a key of your own under Settings › Providers.</string>
+    <string name="nm_cloud_sign_in">Add a provider</string>
     <string name="nm_cloud_channel_phone">Nomor ponsel</string>
     <string name="nm_cloud_channel_email">E-mail</string>
     <string name="nm_cloud_remaining">%1$s token tersisa</string>
@@ -721,7 +721,7 @@
     <string name="nm_cloud_sign_out_sub">Kunci ponsel ini dicabut dan penyedia Cloud dihapus; kuota tetap di akunmu.</string>
     <string name="nm_cloud_sign_out_confirm">Penyedia Community Relay dan modelnya akan dihapus dari ponsel ini.</string>
     <string name="nm_cloud_row_remaining">%1$s tersisa</string>
-    <string name="nm_cloud_row_sign_in">Masuk</string>
+    <string name="nm_cloud_row_sign_in">Add a provider</string>
     <string name="nm_cloud_err_bad_identifier">Itu tidak tampak seperti alamat e-mail.</string>
     <string name="nm_cloud_err_code_wrong">Kode salah.</string>
     <string name="nm_cloud_err_code_expired">Kode itu sudah kedaluwarsa; kirim yang baru.</string>
@@ -761,7 +761,7 @@
     <string name="nm_cloud_err_hub_paused">Hubungan antar perangkat di relay ini dijeda untuk sementara; setiap perangkat tetap bekerja sendiri.</string>
     <string name="nm_refusal_relay_says">Kata relay: %1$s</string>
     <string name="nm_refusal_new_chat">Obrolan baru</string>
-    <string name="nm_refusal_sign_in">Masuk</string>
+    <string name="nm_refusal_sign_in">Add a provider</string>
     <string name="nm_refusal_open_settings">Buka Pengaturan</string>
 
     <!-- 0.1.20: the account page -->
@@ -819,7 +819,7 @@
     <string name="nm_ways_add">Tambah</string>
     <string name="nm_ways_add_named">Tambah %1$s</string>
     <string name="nm_ways_get_key">Dapatkan kunci</string>
-    <string name="nm_ways_sign_in">Masuk</string>
+    <string name="nm_ways_sign_in">Add a provider</string>
     <string name="nm_ways_more">Penyedia lainnya</string>
     <string name="nm_ways_less">Lebih sedikit penyedia</string>
     <string name="nm_ways_sub_title">Langganan yang sudah kamu bayar</string>
@@ -832,7 +832,7 @@
     <string name="nm_cap_pictures_unavailable">Gambar memerlukan penyedia dengan model gambar: Bailian, OpenAI, Gemini atau OpenRouter.</string>
     <string name="nm_cap_clips_unavailable">Klip memerlukan penyedia dengan model video: Alibaba Cloud Bailian.</string>
     <string name="nm_cap_hands_unavailable">Tangan memerlukan model yang bisa melihat layar: Bailian, OpenRouter, OpenAI, Anthropic, Gemini, atau penyedia mana pun dengan model visi.</string>
-    <string name="nm_cap_chat_unavailable">Chat memerlukan penyedia dengan model chat: tambahkan kunci, atau masuk.</string>
+    <string name="nm_cap_chat_unavailable">Chat needs a provider with chat models: add a key under Settings › Providers.</string>
     <string name="nm_ways_invite_title">Undang teman: +¥%1$s untukmu dan +¥%2$s untuk mereka, saat orang baru yang mendaftar lewat tautanmu mengirim permintaan pertamanya.</string>
     <string name="nm_ways_invite_share">Bagikan tautan</string>
     <string name="nm_ways_invite_copy">Salin tautan</string>
@@ -857,7 +857,7 @@
     <string name="nm_data_delete_sub">Menghapus rekaman chat akun ini dan setiap giliran latih yang disimpan darinya, entah sakelarnya sedang nyala atau mati. Mematikan sakelar tetap menyimpan yang sudah tersimpan sampai kamu menghapusnya di sini.</string>
     <string name="nm_data_delete_confirm">Rekaman chat-mu dan giliran latih yang disimpan akan dihapus dari server. Ini tidak bisa dibatalkan.</string>
     <string name="nm_data_deleted">Dihapus: %1$d giliran rekaman, %2$d berkas, %3$d giliran latih.</string>
-    <string name="nm_data_sign_in">Masuk ke Community Relay untuk memakainya.</string>
+    <string name="nm_data_sign_in">Not used: Nano Agent keeps your chats on this phone.</string>
     <string name="nm_data_privacy">Kebijakan privasi</string>
     <string name="nm_data_status_on">Nyala</string>
     <string name="nm_data_status_off">Mati</string>
@@ -937,7 +937,7 @@
     <string name="nm_cloud_allowance_left">Tersisa ¥%1$s · $%2$s</string>
     <string name="nm_cloud_allowance_why">¥%1$s untuk memulai, +¥%2$s untuk setiap teman yang kamu undang, dan +¥%2$s untuk mereka; setelah itu, kuncimu sendiri yang menjaga model tetap berjalan.</string>
     <string name="nm_cloud_tokens_line">%1$s token seluruhnya · %2$s hari ini</string>
-    <string name="nm_cloud_notice_title">Gratis, open source, nirlaba</string>
+    <string name="nm_cloud_notice_title">Free and open source</string>
     <string name="nm_cloud_notice_closing">Menemukan bug, ingin fitur, punya patch? Repositori GitHub tempatnya.</string>
     <string name="nm_cloud_notice">Nano Agent adalah proyek komunitas open source nirlaba: gratis, selamanya. Modelnya datang dengan kuota gratis yang dibayar pengembang; setelah itu, kuncimu sendiri. Tidak ada yang dijual; apa yang disimpan relay ada di kebijakan privasi, dan Pengaturan → Kontrol data ada di tanganmu. Hapus akun kapan pun kamu mau.</string>
 
@@ -965,7 +965,7 @@
     <string name="nm_devices_connected">Terhubung</string>
     <string name="nm_devices_connecting">Menghubungkan…</string>
     <string name="nm_devices_off">Mati</string>
-    <string name="nm_devices_none">Belum ada perangkat lain. Di komputermu, pasang Nano Agent Desktop dan masuk dengan akun yang sama; ia muncul di sini dalam hitungan detik.</string>
+    <string name="nm_devices_none">Belum ada perangkat lain. Di komputermu, pasang nanoMuse Desktop dan masuk dengan akun yang sama; ia muncul di sini dalam hitungan detik.</string>
     <string name="nm_devices_online">online</string>
     <string name="nm_devices_offline">offline</string>
     <string name="nm_devices_web">Konsol web</string>
@@ -1140,7 +1140,7 @@
     <string name="nm_models_cloud_off_refused">Tambahkan penyedia Anda sendiri lebih dulu; dengan Community Relay mati, tidak ada lagi yang bisa menjawab.</string>
     <string name="nm_chat_no_model">Saat ini tidak ada model yang bisa menjawab. Pilih satu di Setelan › Model.</string>
     <string name="nm_cloud_provider_no_delete">Penyedia ini adalah akun Community Relay Anda. Matikan di atas untuk berhenti memakai modelnya; untuk keluar, buka Pengaturan › Community Relay.</string>
-    <string name="nm_welcome_own_key">Pakai kunci API sendiri saja</string>
+    <string name="nm_welcome_own_key">Skip for now</string>
     <string name="nm_useit_title">Pakai untuk</string>
     <string name="nm_useit_body_signed_out">Pilih apa yang ditangani kunci ini.</string>
     <string name="nm_useit_use">Pakai</string>

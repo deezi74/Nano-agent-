@@ -611,9 +611,9 @@
     <string name="nm_pc_title">Computere</string>
     <string name="nm_pc_none_short">Niciunul</string>
     <string name="nm_pc_intro">Spui aici, se face pe computerul tău: o comandă, un fișier, o pagină în browserul lui, o privire pe ecranul lui sau o sarcină întreagă pentru Nano Agent de acolo. Telefonul conduce computerul, niciodată invers; fiecare aprobare se decide mai întâi aici.</string>
-    <string name="nm_pc_hub_title">Calea simplă: Nano Agent Desktop, același cont</string>
-    <string name="nm_pc_hub_body">Instalează Nano Agent Desktop pe computer și conectează-te cu contul acestui telefon; apare sub Cont → Dispozitive în câteva secunde.</string>
-    <string name="nm_pc_hub_download">Descarcă Nano Agent Desktop</string>
+    <string name="nm_pc_hub_title">Calea simplă: nanoMuse Desktop, același cont</string>
+    <string name="nm_pc_hub_body">Instalează nanoMuse Desktop pe computer și conectează-te cu contul acestui telefon; apare sub Cont → Dispozitive în câteva secunde.</string>
+    <string name="nm_pc_hub_download">Descarcă nanoMuse Desktop</string>
     <string name="nm_pc_hub_account">Cont și dispozitive</string>
     <string name="nm_pc_section_paired">Computere pe acest cont</string>
     <string name="nm_pc_none">Niciun computer încă</string>
@@ -626,7 +626,7 @@
     <string name="nm_pc_account_hint">Acest telefon e conectat ca %1$s; computerul trebuie să se conecteze cu același cont.</string>
     <string name="nm_pc_checking">Se verifică…</string>
     <string name="nm_pc_answering">%1$s răspunde</string>
-    <string name="nm_pc_not_answering">%1$s nu răspunde. Mai rulează Nano Agent Desktop acolo?</string>
+    <string name="nm_pc_not_answering">%1$s nu răspunde. Mai rulează nanoMuse Desktop acolo?</string>
 
     <!-- the approval card -->
     <string name="nm_risk_desc_on_computer">Pe computerul „%1$s”, nu pe acest telefon.</string>
@@ -649,9 +649,9 @@
     <string name="nm_setup_own_key">Am propria mea cheie API</string>
 
     <!-- nanoMuse: the first-run pages -->
-    <string name="nm_welcome_tagline">Un agent personal open source pentru fiecare dispozitiv pe care îl ai.</string>
-    <string name="nm_welcome_email">Conectează-te (gratuit)</string>
-    <string name="nm_welcome_fine_print">Un singur cont îți ține dispozitivele împreună și poartă utilizarea gratuită a modelului; nu se percepe nimic. Propria cheie API poate fi adăugată imediat după.</string>
+    <string name="nm_welcome_tagline">Your pocket AI agent. It does things, not just answers.</string>
+    <string name="nm_welcome_email">Add your AI provider</string>
+    <string name="nm_welcome_fine_print">No account and no sign-in. Paste a key from OpenRouter, OpenAI, Anthropic, Google or xAI, or point it at your own FreeLLMAPI or Ollama for free models.</string>
     <string name="nm_setup_source_title">Care model răspunde?</string>
     <string name="nm_setup_source_sub">Contul tău aduce deja unul. Poți adăuga și propria cheie API și poți comuta oricând.</string>
     <string name="nm_setup_source_cloud">Folosește modelul Community Relay</string>
@@ -666,9 +666,9 @@
     <string name="nm_welcome_feat_chat_sub">Un model capabil, generare de imagini și video, unelte, abilități și memorie, pe telefonul tău</string>
     <string name="nm_welcome_feat_hands">Mâini: îți folosește telefonul</string>
     <string name="nm_welcome_feat_hands_sub">Rezervă trenul, comandă masa, caută ceva într-o aplicație; tu privești și îl poți opri oricând</string>
-    <string name="nm_welcome_feat_reach">Acces: computerele tale, de aici</string>
-    <string name="nm_welcome_feat_reach_sub">Instalează Nano Agent Desktop pe un Mac, un Windows sau un Linux, conectează-te cu același cont și dă-i de lucru de pe telefon</string>
-    <string name="nm_welcome_notice">Nano Agent este un proiect comunitar open source, nonprofit: gratuit, pentru totdeauna. Modelul vine cu un credit gratuit plătit de dezvoltator; după aceea, propria ta cheie. Nimic nu se vinde; ce păstrează relay-ul e în politica de confidențialitate, iar Setări → Controlul datelor e al tău.</string>
+    <string name="nm_welcome_feat_reach">Its own computer</string>
+    <string name="nm_welcome_feat_reach_sub">A Linux sandbox and a browser inside the app: it runs code, opens websites and fills in forms for you</string>
+    <string name="nm_welcome_notice">Nano Agent is free, open-source software (GPL-3.0). Your chats stay on this phone and go only to the AI provider you pick. There is nothing to sign up for.</string>
     <string name="nm_welcome_hands_title">Lasă-l să-ți folosească telefonul</string>
     <string name="nm_welcome_hands_sub">Cu două permisiuni poate deschide aplicații, atinge și tasta pentru tine. O capsulă cu fiecare pas și un buton Stop rămâne pe ecran; autentificările, parolele și codurile sunt întotdeauna ale tale.</string>
     <string name="nm_welcome_hands_turn_on">Pornește</string>
@@ -681,7 +681,7 @@
     <string name="nm_cloud_mode_password">Cu o parolă</string>
     <string name="nm_cloud_password">Parolă</string>
     <string name="nm_cloud_forgot_password">Ai uitat parola? Conectează-te cu un cod</string>
-    <string name="nm_cloud_identifier">Număr de telefon din China continentală sau e-mail</string>
+    <string name="nm_cloud_identifier">Phone number or e-mail</string>
     <string name="nm_cloud_identifier_hint">tu@example.com</string>
     <string name="nm_cloud_code">Cod</string>
     <string name="nm_cloud_send_code">Trimite codul</string>
@@ -706,11 +706,11 @@
     <string name="nm_cloud_server_change_confirm">Cheia acestui telefon aparține serverului actual. Deconectează-te mai întâi aici, apoi conectează-te la celălalt server din ecranul de conectare.</string>
 
     <!-- Text-message codes: said on the sign-in screen before asking, and for the relay's phone_region answer -->
-    <string name="nm_cloud_sms_region">Codurile prin SMS ajung doar la numere din China continentală. Folosește în schimb o adresă de e-mail.</string>
+    <string name="nm_cloud_sms_region">Use an e-mail address.</string>
     <string name="nm_cloud_fine_print">Relay-ul păstrează un id de cont, un identificator mascat, contoare de utilizare și numele și aspectul agentului tău; ce altceva, și ce poți opri tu, e în politica de confidențialitate.</string>
-    <string name="nm_cloud_not_signed_in">Neconectat</string>
-    <string name="nm_cloud_not_signed_in_sub">Conectează-te cu un număr de telefon sau un e-mail pentru un credit gratuit. Furnizorii tăi rămân așa cum sunt.</string>
-    <string name="nm_cloud_sign_in">Conectează-te</string>
+    <string name="nm_cloud_not_signed_in">No account needed</string>
+    <string name="nm_cloud_not_signed_in_sub">Nano Agent has no sign-in. Add a key of your own under Settings › Providers.</string>
+    <string name="nm_cloud_sign_in">Add a provider</string>
     <string name="nm_cloud_channel_phone">Număr de telefon</string>
     <string name="nm_cloud_channel_email">E-mail</string>
     <string name="nm_cloud_remaining">%1$s tokenuri rămase</string>
@@ -727,7 +727,7 @@
     <string name="nm_cloud_sign_out_sub">Cheia acestui telefon e revocată și furnizorul Cloud e eliminat; creditul rămâne la contul tău.</string>
     <string name="nm_cloud_sign_out_confirm">Furnizorul Community Relay și modelele lui vor fi eliminate de pe acest telefon.</string>
     <string name="nm_cloud_row_remaining">%1$s rămase</string>
-    <string name="nm_cloud_row_sign_in">Conectează-te</string>
+    <string name="nm_cloud_row_sign_in">Add a provider</string>
     <string name="nm_cloud_err_bad_identifier">Nu pare o adresă de e-mail.</string>
     <string name="nm_cloud_err_code_wrong">Cod greșit.</string>
     <string name="nm_cloud_err_code_expired">Codul a expirat; trimite unul nou.</string>
@@ -767,7 +767,7 @@
     <string name="nm_cloud_err_hub_paused">Legătura între dispozitive e oprită pe acest relay deocamdată; fiecare dispozitiv merge mai departe pe cont propriu.</string>
     <string name="nm_refusal_relay_says">Relay-ul spune: %1$s</string>
     <string name="nm_refusal_new_chat">Conversație nouă</string>
-    <string name="nm_refusal_sign_in">Conectează-te</string>
+    <string name="nm_refusal_sign_in">Add a provider</string>
     <string name="nm_refusal_open_settings">Deschide setările</string>
 
     <!-- 0.1.20: the account page -->
@@ -825,7 +825,7 @@
     <string name="nm_ways_add">Adaugă</string>
     <string name="nm_ways_add_named">Adaugă %1$s</string>
     <string name="nm_ways_get_key">Obține o cheie</string>
-    <string name="nm_ways_sign_in">Conectează-te</string>
+    <string name="nm_ways_sign_in">Add a provider</string>
     <string name="nm_ways_more">Mai mulți furnizori</string>
     <string name="nm_ways_less">Mai puțini furnizori</string>
     <string name="nm_ways_sub_title">Un abonament pe care îl plătești deja</string>
@@ -838,7 +838,7 @@
     <string name="nm_cap_pictures_unavailable">Imaginile au nevoie de un furnizor cu modele de imagine: Bailian, OpenAI, Gemini sau OpenRouter.</string>
     <string name="nm_cap_clips_unavailable">Clipurile au nevoie de un furnizor cu modele video: Alibaba Cloud Bailian.</string>
     <string name="nm_cap_hands_unavailable">Mâinile au nevoie de un model care vede ecranul: Bailian, OpenRouter, OpenAI, Anthropic, Gemini sau orice furnizor cu modele de viziune.</string>
-    <string name="nm_cap_chat_unavailable">Chatul are nevoie de un furnizor cu modele de chat: adaugă o cheie sau conectează-te.</string>
+    <string name="nm_cap_chat_unavailable">Chat needs a provider with chat models: add a key under Settings › Providers.</string>
     <string name="nm_ways_invite_title">Invită un prieten: +¥%1$s pentru tine și +¥%2$s pentru el, când o persoană nouă înscrisă cu linkul tău trimite prima cerere.</string>
     <string name="nm_ways_invite_share">Partajează linkul</string>
     <string name="nm_ways_invite_copy">Copiază linkul</string>
@@ -863,7 +863,7 @@
     <string name="nm_data_delete_sub">Elimină înregistrarea conversațiilor acestui cont și fiecare schimb de antrenare păstrat din ea, fie că întrerupătorul e acum pornit sau oprit. Oprirea întrerupătorului păstrează ce s-a păstrat până ștergi aici.</string>
     <string name="nm_data_delete_confirm">Înregistrarea conversațiilor tale și schimburile de antrenare păstrate sunt eliminate de pe server. Nu se poate anula.</string>
     <string name="nm_data_deleted">Șters: %1$d schimburi din înregistrare, %2$d fișiere, %3$d schimburi de antrenare.</string>
-    <string name="nm_data_sign_in">Conectează-te la Community Relay pentru a-l folosi.</string>
+    <string name="nm_data_sign_in">Not used: Nano Agent keeps your chats on this phone.</string>
     <string name="nm_data_privacy">Politica de confidențialitate</string>
     <string name="nm_data_status_on">Pornit</string>
     <string name="nm_data_status_off">Oprit</string>
@@ -943,7 +943,7 @@
     <string name="nm_cloud_allowance_left">¥%1$s · $%2$s rămași</string>
     <string name="nm_cloud_allowance_why">¥%1$s la început, +¥%2$s pentru fiecare prieten invitat, și +¥%2$s pentru el; după aceea, propria ta cheie ține modelul în funcțiune.</string>
     <string name="nm_cloud_tokens_line">%1$s tokenuri în total · %2$s azi</string>
-    <string name="nm_cloud_notice_title">Gratuit, open source, nonprofit</string>
+    <string name="nm_cloud_notice_title">Free and open source</string>
     <string name="nm_cloud_notice_closing">Ai găsit o eroare, vrei o funcție, ai un patch? Depozitul GitHub e locul potrivit.</string>
     <string name="nm_cloud_notice">Nano Agent este un proiect comunitar open source, nonprofit: gratuit, pentru totdeauna. Modelul vine cu un credit gratuit plătit de dezvoltator; după aceea, propria ta cheie. Nimic nu se vinde; ce păstrează relay-ul e în politica de confidențialitate, iar Setări → Controlul datelor e al tău. Șterge contul oricând vrei.</string>
 
@@ -973,7 +973,7 @@
     <string name="nm_devices_connected">Conectat</string>
     <string name="nm_devices_connecting">Se conectează…</string>
     <string name="nm_devices_off">Oprit</string>
-    <string name="nm_devices_none">Niciun alt dispozitiv încă. Pe computer, instalează Nano Agent Desktop și conectează-te cu același cont; apare aici în câteva secunde.</string>
+    <string name="nm_devices_none">Niciun alt dispozitiv încă. Pe computer, instalează nanoMuse Desktop și conectează-te cu același cont; apare aici în câteva secunde.</string>
     <string name="nm_devices_online">online</string>
     <string name="nm_devices_offline">offline</string>
     <string name="nm_devices_web">Consola web</string>
@@ -1148,7 +1148,7 @@
     <string name="nm_models_cloud_off_refused">Adaugă mai întâi un furnizor al tău; cu Community Relay oprit, nimic altceva nu ar putea răspunde.</string>
     <string name="nm_chat_no_model">Niciun model nu poate răspunde acum. Alege unul în Setări › Modele.</string>
     <string name="nm_cloud_provider_no_delete">Acest furnizor este contul tău Community Relay. Oprește-l mai sus ca să nu-i mai folosești modelele; pentru deconectare, deschide Setări › Community Relay.</string>
-    <string name="nm_welcome_own_key">Folosește propria cheie API</string>
+    <string name="nm_welcome_own_key">Skip for now</string>
     <string name="nm_useit_title">La ce să o folosești</string>
     <string name="nm_useit_body_signed_out">Alege de ce să se ocupe această cheie.</string>
     <string name="nm_useit_use">Folosește</string>

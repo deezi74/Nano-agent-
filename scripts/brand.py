@@ -97,6 +97,7 @@ def edit(path: Path, subs: list[tuple[str, str]], *, literal: bool = False, expe
 PHRASES = [
     ("nanoMuse Cloud", "Community Relay"),
     ("nanoMuse Desktop", "nanoMuse Desktop"),
+    ("Nano Agent Desktop", "nanoMuse Desktop"),  # the desktop app is nanoMuse's own
     ("nanoMuse Skills", f"{NAME} Skills"),
     ("Not affiliated with Meta", "Built on nanoMuse (GPL-3.0). Not affiliated with Meta or nanoMuse"),
     ("3D toy (Muse)", "3D toy"),
@@ -396,6 +397,76 @@ def touches() -> None:
     ])
 
 
+# --- no login --------------------------------------------------------------------------------
+
+NO_LOGIN_STRINGS = {
+    "nm_welcome_tagline": "Your pocket AI agent. It does things, not just answers.",
+    "nm_welcome_email": "Add your AI provider",
+    "nm_welcome_own_key": "Skip for now",
+    "nm_welcome_fine_print": "No account and no sign-in. Paste a key from OpenRouter, OpenAI, Anthropic, Google or xAI, or point it at your own FreeLLMAPI or Ollama for free models.",
+    "nm_cloud_notice_title": "Free and open source",
+    "nm_welcome_notice": "Nano Agent is free, open-source software (GPL-3.0). Your chats stay on this phone and go only to the AI provider you pick. There is nothing to sign up for.",
+    "nm_cloud_identifier": "Phone number or e-mail",
+    "nm_cloud_sms_region": "Use an e-mail address.",
+    "nm_cloud_sign_in": "Add a provider",
+    "nm_cloud_row_sign_in": "Add a provider",
+    "nm_refusal_sign_in": "Add a provider",
+    "nm_ways_sign_in": "Add a provider",
+    "nm_cloud_not_signed_in": "No account needed",
+    "nm_cloud_not_signed_in_sub": "Nano Agent has no sign-in. Add a key of your own under Settings › Providers.",
+    "nm_cap_chat_unavailable": "Chat needs a provider with chat models: add a key under Settings › Providers.",
+    "nm_data_sign_in": "Not used: Nano Agent keeps your chats on this phone.",
+    "nm_welcome_feat_reach": "Its own computer",
+    "nm_welcome_feat_reach_sub": "A Linux sandbox and a browser inside the app: it runs code, opens websites and fills in forms for you",
+}
+
+REDIRECT = """composable(io.github.nanomuse.ui.cloud.{route}) {{
+            // Nano Agent: no account and no sign-in. Anything that used to open the relay
+            // account opens the AI providers instead.
+            androidx.compose.runtime.LaunchedEffect(Unit) {{
+                navController.navigate(Routes.{target}) {{
+                    popUpTo(io.github.nanomuse.ui.cloud.{route}) {{ inclusive = true }}
+                }}
+            }}
+        }}"""
+
+
+def no_login() -> None:
+    """Nano Agent has no account: the relay sign-in (codes to phone numbers / e-mail, which only
+    reached mainland-China numbers) is gone from the first run, Settings and every link to it."""
+    # First run: "Add your AI provider" or "Skip for now"; once skipped or started it never
+    # comes back (the provider can be added later in Settings).
+    edit(NM / "ui" / "onboarding" / "FirstRunSetup.kt", [
+        (r"fun needed\(signedIn: Boolean, hasProviders: Boolean, hasSessions: Boolean, done: Boolean\): Boolean =\n\s*\(!signedIn && !hasProviders\) \|\| \(!hasSessions && !done\)",
+         "fun needed(signedIn: Boolean, hasProviders: Boolean, hasSessions: Boolean, done: Boolean): Boolean =\n"
+         "        !done && ((!signedIn && !hasProviders) || !hasSessions) // Nano Agent: Skip is final"),
+        (r"FirstRunSetup\.Stage\.WELCOME -> WelcomePage\(\n\s*onSignIn = onSignIn,\n\s*onOwnKey = \{ FirstRunSetup\.markSourceChosen\(context\); sourceChosen = true; onAddProvider\(\) \},\n\s*\)",
+         "FirstRunSetup.Stage.WELCOME -> WelcomePage(\n"
+         "                        // Nano Agent: no sign-in. Primary: add a provider; secondary: skip.\n"
+         "                        onSignIn = { FirstRunSetup.markSourceChosen(context); sourceChosen = true; onAddProvider() },\n"
+         "                        onOwnKey = onStart,\n"
+         "                    )"),
+    ])
+    nav = OM / "ui" / "navigation" / "AppNavigation.kt"
+    edit(nav, [
+        (r"composable\(io\.github\.nanomuse\.ui\.cloud\.ROUTE_CLOUD_SIGN_IN\) \{\n\s*io\.github\.nanomuse\.ui\.cloud\.CloudSignInScreen\(\n[\s\S]*?\n            \)\n        \}",
+         REDIRECT.format(route="ROUTE_CLOUD_SIGN_IN", target="ADD_PROVIDER")),
+        (r"composable\(io\.github\.nanomuse\.ui\.cloud\.ROUTE_CLOUD_ACCOUNT\) \{\n\s*io\.github\.nanomuse\.ui\.cloud\.CloudAccountScreen\(\n[\s\S]*?\n            \)\n        \}",
+         REDIRECT.format(route="ROUTE_CLOUD_ACCOUNT", target="PROVIDER_LIST")),
+    ])
+    # Settings: the relay account row goes.
+    edit(OM / "ui" / "settings" / "SettingsScreen.kt", [
+        (r"\n\s*// nanoMuse: the relay account[^\n]*\n\s*val cloudAccount = [\s\S]*?onClick = onCloudClick,\n\s*\)\n\s*io\.github\.nanomuse\.ui\.muse\.MuseRowDivider\(\)",
+         "\n                // Nano Agent: no relay account row (no sign-in)."),
+    ])
+    for path in sorted(RES.glob("values*/nm_strings.xml")):
+        subs = [(rf'(<string name="{k}">)[^<]*(</string>)', rf"\g<1>{v}\g<2>") for k, v in NO_LOGIN_STRINGS.items()]
+        if path.parent.name == "values":
+            edit(path, subs)
+        else:  # other locales: English beats a translation that still says "sign in"
+            edit(path, subs, expect=False)
+
+
 def report_cjk() -> None:
     """Chinese left in user-facing places (strings, catalogues), for a human to look at."""
     left = []
@@ -417,6 +488,7 @@ def main() -> int:
     links()
     colours()
     touches()
+    no_login()
     report_cjk()
     verb = "would change" if CHECK else "changed"
     print(f"{verb} {len(set(changed))} files")
