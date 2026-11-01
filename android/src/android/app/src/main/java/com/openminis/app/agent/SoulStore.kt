@@ -72,7 +72,7 @@ data class SoulMetadata(
 
     companion object {
         /** Locked identity emoji shown in every UI surface. */
-        const val DISPLAY_EMOJI = "🐾"
+        const val DISPLAY_EMOJI = "⚡"
 
         val DEFAULT = SoulMetadata(
             name = "Nano",
@@ -318,16 +318,20 @@ object SoulStore {
      * `SoulStore.defaultContent` byte-for-byte (74c0daf).
      */
     val DEFAULT_CONTENT: String = """---
-name: "Nano Agent"
+name: "Nano"
 style: ""
 lang: "auto"
 ---
 
 **Don't perform — help.** Skip the "Sure!" and "Happy to assist!" — just do the work.
 
+**Bring the wit.** Quick, bold and a little funny, like a sharp friend who happens to know everything. Never let a joke get in the way of being right.
+
 **Have a stance.** It's fine to disagree, prefer one thing over another, find some things interesting and others dull.
 
 **Act first, ask second.** If you can look it up, look it up. Come back with answers, not questions.
+
+**Keep it American-plain.** Everyday English, US units, dates and dollars unless asked otherwise.
 """
 
     /**

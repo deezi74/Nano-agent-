@@ -330,6 +330,72 @@ def colours() -> None:
         write(path, text, new)
 
 
+# --- Nano Agent touches (carried over from TruAgent) -------------------------------------------
+
+FREELLMAPI = {
+    "id": "freellmapi",
+    "name": "FreeLLMAPI",
+    "protocol": "openai",
+    "base_url": "http://localhost:3001/v1",
+    "key_url": "http://localhost:3001",
+    "key_hint": "your FreeLLMAPI key",
+    "auth": ["key", "none"],
+    "regions": ["global"],
+    "capabilities": ["chat"],
+    "user_capabilities": True,
+    "defaults": {"chat": "auto"},
+    "note": "Your own free-model router. Start it in Termux (cd ~/freellmapi && termux-wake-lock && npm run dev), keep the address http://localhost:3001/v1 and the model auto; it picks a free model for each request.",
+    "verified": "2026-11",
+}
+
+# American defaults where nanoMuse picked Chinese models (the user can choose any model).
+DEFAULT_MODELS = {
+    "openrouter": {"chat": "openai/gpt-5.4-mini", "hands": "openai/gpt-5.4"},
+    "ollama": {"chat": "gpt-oss:20b"},
+}
+DROP_DEFAULTS = {"groq": ["hands"]}
+
+SOUL_BODY = """**Don't perform — help.** Skip the "Sure!" and "Happy to assist!" — just do the work.
+
+**Bring the wit.** Quick, bold and a little funny, like a sharp friend who happens to know everything. Never let a joke get in the way of being right.
+
+**Have a stance.** It's fine to disagree, prefer one thing over another, find some things interesting and others dull.
+
+**Act first, ask second.** If you can look it up, look it up. Come back with answers, not questions.
+
+**Keep it American-plain.** Everyday English, US units, dates and dollars unless asked otherwise.
+"""
+
+
+def touches() -> None:
+    p = ASSETS / "providers.json"
+    data = json.loads(p.read_text(encoding="utf-8"))
+    provs = data["providers"]
+    provs[:] = [x for x in provs if x["id"] != "freellmapi"]
+    at = next((i for i, x in enumerate(provs) if x["id"] == "ollama"), len(provs))
+    provs.insert(at, FREELLMAPI)
+    for x in provs:
+        x.setdefault("defaults", {}).update(DEFAULT_MODELS.get(x["id"], {}))
+        for k in DROP_DEFAULTS.get(x["id"], []):
+            x["defaults"].pop(k, None)
+    dump(p, data)
+
+    soul = OM / "agent" / "SoulStore.kt"
+    text = soul.read_text(encoding="utf-8")
+    new = re.sub(r'(val DEFAULT_CONTENT: String = """---\nname: )"[^"]*"', rf'\1"{AGENT_NAME}"', text)
+    new = re.sub(r'(val DEFAULT_CONTENT: String = """---\n[\s\S]*?\n---\n\n)[\s\S]*?(""")',
+                 lambda m: m.group(1) + SOUL_BODY + m.group(2), new)
+    new = new.replace('const val DISPLAY_EMOJI = "🐾"', 'const val DISPLAY_EMOJI = "⚡"')
+    write(soul, text, new)
+
+    # Dark by default, like TruAgent (Settings > Appearance still offers System / Light).
+    for path in (OM / "ui" / "settings" / "AppearanceScreen.kt", OM / "MainActivity.kt"):
+        edit(path, [("getInt(KEY_THEME_MODE, 0)", "getInt(KEY_THEME_MODE, 2)")], literal=True)
+    edit(OM / "config" / "ConfigBuiltins.kt", [
+        (r'(key = "theme_mode",\n\s*cases = listOf\("system", "light", "dark"\),\n\s*defaultIndex = )0', r"\g<1>2"),
+    ])
+
+
 def report_cjk() -> None:
     """Chinese left in user-facing places (strings, catalogues), for a human to look at."""
     left = []
@@ -350,6 +416,7 @@ def main() -> int:
     region()
     links()
     colours()
+    touches()
     report_cjk()
     verb = "would change" if CHECK else "changed"
     print(f"{verb} {len(set(changed))} files")

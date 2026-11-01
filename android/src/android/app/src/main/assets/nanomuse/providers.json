@@ -36,8 +36,8 @@
         "image"
       ],
       "defaults": {
-        "chat": "deepseek/deepseek-v4.1-flash",
-        "hands": "qwen/qwen3.8-27b",
+        "chat": "openai/gpt-5.4-mini",
+        "hands": "openai/gpt-5.4",
         "image": "openai/gpt-image-2"
       },
       "note": "One account, one key, pay as you go, international cards; models carry the maker's prefix. Pictures only through image-output models (openai/gpt-image-2, google/gemini-2.5-flash-image, bytedance-seed/seedream-4.5) on OpenRouter's Image API (/api/v1/images). The phone apps can sign in to OpenRouter instead of pasting a key.",
@@ -316,8 +316,7 @@
         "vision"
       ],
       "defaults": {
-        "chat": "openai/gpt-oss-120b",
-        "hands": "qwen/qwen3.8-27b"
+        "chat": "openai/gpt-oss-120b"
       },
       "note": "Fast hosting of open models. qwen/qwen3.8-27b reads pictures; gpt-oss and Llama do not. No image or video models.",
       "verified": "2026-10",
@@ -543,6 +542,30 @@
       "verified": "2026-10"
     },
     {
+      "id": "freellmapi",
+      "name": "FreeLLMAPI",
+      "protocol": "openai",
+      "base_url": "http://localhost:3001/v1",
+      "key_url": "http://localhost:3001",
+      "key_hint": "your FreeLLMAPI key",
+      "auth": [
+        "key",
+        "none"
+      ],
+      "regions": [
+        "global"
+      ],
+      "capabilities": [
+        "chat"
+      ],
+      "user_capabilities": true,
+      "defaults": {
+        "chat": "auto"
+      },
+      "note": "Your own free-model router. Start it in Termux (cd ~/freellmapi && termux-wake-lock && npm run dev), keep the address http://localhost:3001/v1 and the model auto; it picks a free model for each request.",
+      "verified": "2026-11"
+    },
+    {
       "id": "ollama",
       "name": "Ollama",
       "protocol": "openai",
@@ -558,7 +581,7 @@
         "chat"
       ],
       "defaults": {
-        "chat": "qwen3:8b"
+        "chat": "gpt-oss:20b"
       },
       "note": "Runs on this machine, no key, nothing leaves it. Hands need a model that reads pictures (a vision model such as a Qwen VL build); the model list says which.",
       "verified": "2026-10",
