@@ -1,0 +1,4 @@
+# Shell scripts keep LF on every platform (Git Bash / WSL checkouts break CRLF scripts).
+*.sh text eol=lf
+gradlew text eol=lf
+android/src/android/app/src/main/assets/nanomuse/*.json text eol=lf

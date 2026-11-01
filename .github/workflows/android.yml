@@ -1,0 +1,152 @@
+name: Android APK
+
+# Builds the signed Nano Agent release APK (arm64-v8a) on every push to main and publishes it
+# as a GitHub release tagged v1.0.<run number>. The in-app updater reads these releases.
+#
+# Signing: if the repository secrets NA_KEYSTORE_B64 / NA_KEYSTORE_PASSWORD / NA_KEY_ALIAS /
+# NA_KEY_PASSWORD exist, that key signs the APK (best: updates install over each other forever).
+# Without them a key is generated once and kept in the Actions cache, so successive builds still
+# update in place; if the cache ever expires the next APK needs an uninstall first.
+
+on:
+  push:
+    branches: [main]
+    paths-ignore: ["**.md", "docs/**"]
+  workflow_dispatch:
+
+concurrency:
+  group: android-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+
+env:
+  NDK_VERSION: 27.2.12479018
+
+jobs:
+  apk:
+    name: release APK · arm64-v8a
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive # android/deps/proot
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "21"
+
+      - uses: actions/setup-go@v5
+        with:
+          go-version: "1.26"
+          cache-dependency-path: android/deps/rclone-mobile/go.sum
+
+      - uses: android-actions/setup-android@v3
+        with:
+          packages: platforms;android-36 build-tools;35.0.0 cmake;3.22.1 ndk;${{ env.NDK_VERSION }}
+
+      - uses: gradle/actions/setup-gradle@v4
+
+      - name: Native artifacts cache (proot, Alpine rootfs, rclone.aar)
+        uses: actions/cache@v4
+        with:
+          path: |
+            android/src/android/app/src/main/assets/proot-aarch64
+            android/src/android/app/src/main/assets/alpine-minirootfs.tar.gz
+            android/src/android/app/src/main/jniLibs/arm64-v8a
+            android/src/android/app/libs/rclone.aar
+          key: natives-v1-${{ hashFiles('android/deps/build_proot.sh', 'android/deps/build_rclone_android.sh', 'android/deps/rclone-mobile/go.sum', 'android/scripts/prepare_android_sandbox.sh', '.gitmodules') }}
+
+      - name: Build natives
+        env:
+          GOTOOLCHAIN: auto
+        run: |
+          export ANDROID_NDK_HOME="$ANDROID_HOME/ndk/$NDK_VERSION"
+          export GOROOT="$(go env GOROOT)" GOPATH="$(go env GOPATH)"
+          export PATH="$GOPATH/bin:$PATH"
+          bash scripts/android/build-natives.sh
+
+      - name: Signing key (cache)
+        id: keycache
+        uses: actions/cache@v4
+        with:
+          path: ~/.nano-agent-signing
+          key: nano-agent-signing-v1
+
+      - name: Signing key
+        env:
+          KS_B64: ${{ secrets.NA_KEYSTORE_B64 }}
+          KS_PASS: ${{ secrets.NA_KEYSTORE_PASSWORD }}
+          KEY_ALIAS: ${{ secrets.NA_KEY_ALIAS }}
+          KEY_PASS: ${{ secrets.NA_KEY_PASSWORD }}
+        run: |
+          set -euo pipefail
+          dir="$HOME/.nano-agent-signing"
+          mkdir -p "$dir"
+          if [ -n "${KS_B64:-}" ]; then
+            echo "Using the keystore from repository secrets"
+            echo "$KS_B64" | base64 -d > "$dir/release.jks"
+            printf 'storeFile=%s\nstorePassword=%s\nkeyAlias=%s\nkeyPassword=%s\n' \
+              "$dir/release.jks" "$KS_PASS" "$KEY_ALIAS" "${KEY_PASS:-$KS_PASS}" > android/keystore.properties
+          else
+            if [ ! -f "$dir/release.jks" ]; then
+              echo "Generating a new signing key (kept in the Actions cache)"
+              pass="$(openssl rand -hex 16)"
+              keytool -genkeypair -v -keystore "$dir/release.jks" -storetype PKCS12 \
+                -alias nanoagent -keyalg RSA -keysize 4096 -validity 10000 \
+                -storepass "$pass" -keypass "$pass" -dname "CN=Nano Agent, O=deezi74, C=US"
+              echo "$pass" > "$dir/pass"
+            fi
+            pass="$(cat "$dir/pass")"
+            printf 'storeFile=%s\nstorePassword=%s\nkeyAlias=nanoagent\nkeyPassword=%s\n' \
+              "$dir/release.jks" "$pass" "$pass" > android/keystore.properties
+          fi
+          keytool -list -v -keystore "$(sed -n 's/^storeFile=//p' android/keystore.properties)" \
+            -storepass "$(sed -n 's/^storePassword=//p' android/keystore.properties)" | grep -E "SHA1:|SHA256:" | head -2
+
+      - name: Version
+        id: ver
+        run: |
+          echo "code=$((100 + GITHUB_RUN_NUMBER))" >> "$GITHUB_OUTPUT"
+          echo "name=1.0.${GITHUB_RUN_NUMBER}" >> "$GITHUB_OUTPUT"
+
+      - name: assembleRelease
+        working-directory: android/src/android
+        run: |
+          export ANDROID_NDK_HOME="$ANDROID_HOME/ndk/$NDK_VERSION"
+          ./gradlew :app:assembleRelease --console=plain --no-daemon \
+            -Pna.versionCode=${{ steps.ver.outputs.code }} -Pna.versionName=${{ steps.ver.outputs.name }}
+
+      - name: Badging
+        run: |
+          apk="$(ls android/src/android/app/build/outputs/apk/release/*.apk | head -1)"
+          bt="$(ls -d "$ANDROID_HOME"/build-tools/* | sort -V | tail -1)"
+          "$bt/aapt" dump badging "$apk" | grep -E "^package:|application-label:|native-code"
+          mkdir -p out
+          cp "$apk" "out/NanoAgent-${{ steps.ver.outputs.name }}.apk"
+          ls -la out
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: NanoAgent-${{ steps.ver.outputs.name }}
+          path: out/*.apk
+          retention-days: 30
+          if-no-files-found: error
+
+      - name: Publish release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v${{ steps.ver.outputs.name }}
+          name: Nano Agent ${{ steps.ver.outputs.name }}
+          target_commitish: ${{ github.sha }}
+          files: out/*.apk
+          body: |
+            Nano Agent ${{ steps.ver.outputs.name }} (build ${{ steps.ver.outputs.code }}), arm64-v8a.
+
+            Download the APK below and open it on your phone (allow "Install unknown apps" for your browser or file manager).
+            Commit: ${{ github.sha }}
+
+            Nano Agent is free software under the GPL-3.0, built on nanoMuse and OpenMinis. Source: ${{ github.server_url }}/${{ github.repository }}

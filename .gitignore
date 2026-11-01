@@ -1,0 +1,22 @@
+# Nano Agent
+# build-time values and signing (never committed)
+android/src/android/app/provider-customization.properties
+android/keystore.properties
+*.jks
+*.keystore
+
+# build output
+build/
+.gradle/
+android/src/android/.kotlin/
+local.properties
+out/
+
+# python
+__pycache__/
+*.py[cod]
+
+# editors / OS
+.idea/
+*.iml
+.DS_Store

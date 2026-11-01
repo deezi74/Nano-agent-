@@ -1,0 +1,655 @@
+{
+  "version": 1,
+  "updated": "2026-10",
+  "capabilities": [
+    "chat",
+    "vision",
+    "image",
+    "video"
+  ],
+  "auth_kinds": [
+    "key",
+    "none",
+    "oauth-chatgpt",
+    "oauth-claude",
+    "oauth-openrouter",
+    "device-kimi"
+  ],
+  "providers": [
+    {
+      "id": "openrouter",
+      "name": "OpenRouter",
+      "protocol": "openai",
+      "base_url": "https://openrouter.ai/api/v1",
+      "key_url": "https://openrouter.ai/keys",
+      "key_hint": "sk-or-v1-…",
+      "auth": [
+        "key",
+        "oauth-openrouter"
+      ],
+      "regions": [
+        "global"
+      ],
+      "capabilities": [
+        "chat",
+        "vision",
+        "image"
+      ],
+      "defaults": {
+        "chat": "deepseek/deepseek-v4.1-flash",
+        "hands": "qwen/qwen3.8-27b",
+        "image": "openai/gpt-image-2"
+      },
+      "note": "One account, one key, pay as you go, international cards; models carry the maker's prefix. Pictures only through image-output models (openai/gpt-image-2, google/gemini-2.5-flash-image, bytedance-seed/seedream-4.5) on OpenRouter's Image API (/api/v1/images). The phone apps can sign in to OpenRouter instead of pasting a key.",
+      "verified": "2026-10",
+      "reasoning": {
+        "doc": "https://openrouter.ai/docs/use-cases/reasoning-tokens",
+        "wire": "reasoning.effort",
+        "listed": true,
+        "rules": []
+      }
+    },
+    {
+      "id": "openai",
+      "name": "OpenAI",
+      "protocol": "openai",
+      "base_url": "https://api.openai.com/v1",
+      "key_url": "https://platform.openai.com/api-keys",
+      "key_hint": "sk-proj-…",
+      "auth": [
+        "key",
+        "oauth-chatgpt"
+      ],
+      "auth_capabilities": {
+        "oauth-chatgpt": [
+          "chat",
+          "vision"
+        ]
+      },
+      "regions": [
+        "global"
+      ],
+      "capabilities": [
+        "chat",
+        "vision",
+        "image"
+      ],
+      "defaults": {
+        "chat": "gpt-5.4-mini",
+        "hands": "gpt-5.4",
+        "image": "gpt-image-2.5-flare"
+      },
+      "note": "With an API key: chat, hands and pictures (gpt-image-2.5-flare / gpt-image-2 through /images/generations). Signed in with a ChatGPT plan (the Codex OAuth): chat and hands only; the Codex backend has no image or video endpoints. OpenAI's terms cover using a ChatGPT plan inside OpenAI's own Codex; other apps have had this access cut off before (OpenCode, January 2026). If it stops working, an API key does.",
+      "verified": "2026-10",
+      "reasoning": {
+        "doc": "https://developers.openai.com/api/docs/guides/reasoning",
+        "wire": "reasoning_effort",
+        "rules": [
+          {
+            "models": "^o[1-9]",
+            "levels": [
+              "low",
+              "medium",
+              "high"
+            ],
+            "default": "medium"
+          },
+          {
+            "models": "^gpt-5(-|$)",
+            "levels": [
+              "minimal",
+              "low",
+              "medium",
+              "high"
+            ],
+            "default": "medium"
+          },
+          {
+            "models": "^gpt-5\\.1(-|$)",
+            "levels": [
+              "low",
+              "medium",
+              "high"
+            ],
+            "default": "none"
+          },
+          {
+            "models": "^gpt-5\\.4",
+            "levels": [
+              "low",
+              "medium",
+              "high",
+              "xhigh"
+            ],
+            "default": "none"
+          },
+          {
+            "models": "^gpt-5\\.[235-9]",
+            "levels": [
+              "low",
+              "medium",
+              "high",
+              "xhigh"
+            ]
+          },
+          {
+            "models": "^gpt-6",
+            "levels": [
+              "low",
+              "medium",
+              "high",
+              "xhigh"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "anthropic",
+      "name": "Anthropic Claude",
+      "protocol": "anthropic",
+      "base_url": "https://api.anthropic.com",
+      "key_url": "https://platform.claude.com/settings/keys",
+      "key_hint": "sk-ant-…",
+      "auth": [
+        "key",
+        "oauth-claude"
+      ],
+      "regions": [
+        "global"
+      ],
+      "capabilities": [
+        "chat",
+        "vision"
+      ],
+      "defaults": {
+        "chat": "claude-sonnet-5-5",
+        "hands": "claude-sonnet-5-5"
+      },
+      "note": "The Messages API, not OpenAI's shape; every current Claude model reads pictures. No image or video models. The phone apps can sign in with a Claude account instead of a key.",
+      "verified": "2026-10",
+      "reasoning": {
+        "doc": "https://docs.claude.com/en/docs/build-with-claude/effort",
+        "wire": "output_config.effort",
+        "rules": [
+          {
+            "models": "^claude-(opus|haiku)-5-5",
+            "levels": [
+              "low",
+              "medium",
+              "high",
+              "xhigh",
+              "max"
+            ],
+            "default": "medium"
+          },
+          {
+            "models": "^claude-(opus|sonnet)-4-6",
+            "levels": [
+              "low",
+              "medium",
+              "high",
+              "max"
+            ],
+            "default": "high"
+          },
+          {
+            "models": "^claude-(opus-4-[78]|opus-5|sonnet-5|haiku-5|fable-5|mythos-5)",
+            "levels": [
+              "low",
+              "medium",
+              "high",
+              "xhigh",
+              "max"
+            ],
+            "default": "high"
+          }
+        ]
+      }
+    },
+    {
+      "id": "gemini",
+      "name": "Google Gemini",
+      "protocol": "gemini",
+      "base_url": "https://generativelanguage.googleapis.com/v1beta/openai",
+      "key_url": "https://aistudio.google.com/apikey",
+      "key_hint": "AIza…",
+      "auth": [
+        "key"
+      ],
+      "regions": [
+        "global"
+      ],
+      "capabilities": [
+        "chat",
+        "vision",
+        "image"
+      ],
+      "defaults": {
+        "chat": "gemini-3.8-flash",
+        "hands": "gemini-3.8-flash",
+        "image": "gemini-2.5-flash-image"
+      },
+      "note": "Google's OpenAI-compatible layer. Gemini models read pictures. Pictures through /images/generations work with gemini-2.5-flash-image and gemini-3-pro-image-preview only; the newer 3.1 image models are not served there. Veo video is not on the compatible layer, so clips are left out.",
+      "verified": "2026-10",
+      "reasoning": {
+        "doc": "https://ai.google.dev/gemini-api/docs/openai",
+        "wire": "reasoning_effort",
+        "rules": [
+          {
+            "models": "^gemini-(2\\.5|3)",
+            "levels": [
+              "low",
+              "medium",
+              "high"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "xai",
+      "name": "xAI Grok",
+      "protocol": "openai",
+      "base_url": "https://api.x.ai/v1",
+      "key_url": "https://console.x.ai",
+      "key_hint": "xai-…",
+      "auth": [
+        "key"
+      ],
+      "regions": [
+        "global"
+      ],
+      "capabilities": [
+        "chat",
+        "vision",
+        "image"
+      ],
+      "defaults": {
+        "chat": "grok-4.7",
+        "hands": "grok-4.7",
+        "image": "grok-imagine-image-2.0"
+      },
+      "note": "grok-4.7 reads pictures (JPEG and PNG). Pictures through /images/generations with grok-imagine-image-2.0. Grok Imagine video uses xAI's own endpoints, so clips are left out.",
+      "verified": "2026-10",
+      "reasoning": {
+        "doc": "https://docs.x.ai/docs/guides/reasoning",
+        "wire": "reasoning_effort",
+        "rules": [
+          {
+            "models": "^grok-4\\.5",
+            "levels": [
+              "low",
+              "medium",
+              "high"
+            ],
+            "default": "high"
+          },
+          {
+            "models": "^grok-4\\.[6-9]",
+            "levels": [
+              "low",
+              "medium",
+              "high",
+              "xhigh"
+            ],
+            "default": "high"
+          }
+        ]
+      }
+    },
+    {
+      "id": "groq",
+      "name": "Groq",
+      "protocol": "openai",
+      "base_url": "https://api.groq.com/openai/v1",
+      "key_url": "https://console.groq.com/keys",
+      "key_hint": "gsk_…",
+      "auth": [
+        "key"
+      ],
+      "regions": [
+        "global"
+      ],
+      "capabilities": [
+        "chat",
+        "vision"
+      ],
+      "defaults": {
+        "chat": "openai/gpt-oss-120b",
+        "hands": "qwen/qwen3.8-27b"
+      },
+      "note": "Fast hosting of open models. qwen/qwen3.8-27b reads pictures; gpt-oss and Llama do not. No image or video models.",
+      "verified": "2026-10",
+      "reasoning": {
+        "doc": "https://console.groq.com/docs/reasoning",
+        "wire": "reasoning_effort",
+        "rules": [
+          {
+            "models": "^openai/gpt-oss-",
+            "levels": [
+              "low",
+              "medium",
+              "high"
+            ]
+          },
+          {
+            "models": "^qwen/qwen3\\.8",
+            "levels": [
+              "low",
+              "medium",
+              "high"
+            ],
+            "default": "none"
+          }
+        ]
+      }
+    },
+    {
+      "id": "mistral",
+      "name": "Mistral AI",
+      "protocol": "openai",
+      "base_url": "https://api.mistral.ai/v1",
+      "key_url": "https://console.mistral.ai/api-keys",
+      "key_hint": "…",
+      "auth": [
+        "key"
+      ],
+      "regions": [
+        "global"
+      ],
+      "capabilities": [
+        "chat",
+        "vision"
+      ],
+      "defaults": {
+        "chat": "mistral-medium-2508",
+        "hands": "mistral-medium-2508"
+      },
+      "note": "mistral-large-2512, mistral-medium-2508, mistral-small-2506 and the Ministral 3 models read pictures. No image or video models.",
+      "verified": "2026-10",
+      "reasoning": {
+        "doc": "https://docs.mistral.ai/capabilities/reasoning/",
+        "wire": "reasoning_effort",
+        "rules": [
+          {
+            "models": "^mistral-(small-latest|medium-3-5|large-4-0)",
+            "levels": [
+              "high"
+            ],
+            "default": "none"
+          },
+          {
+            "models": "^zai-glm-5-3",
+            "levels": [
+              "low",
+              "high",
+              "max"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "opencode-zen",
+      "name": "OpenCode Zen",
+      "protocol": "openai",
+      "base_url": "https://opencode.ai/zen/v1",
+      "key_url": "https://opencode.ai/auth",
+      "auth": [
+        "key"
+      ],
+      "regions": [
+        "global"
+      ],
+      "capabilities": [
+        "chat"
+      ],
+      "defaults": {
+        "chat": "deepseek-v4.1-flash"
+      },
+      "note": "OpenCode's own gateway: pay per request from a balance, a key made in the OpenCode console, and a few free models beside the paid ones. Chat answers on the OpenAI shape; the GPT, Claude and Gemini ids on the same host speak the Responses, Messages and Google shapes, which this entry does not reach, and the vision model OpenCode lists is deepseek-v4-flash-vision-exp, the id DeepSeek has retired on its own platform, so the hands are not claimed here. OpenCode publishes no plan sign-in, only a key.",
+      "verified": "2026-10"
+    },
+    {
+      "id": "opencode-go",
+      "name": "OpenCode Go",
+      "protocol": "openai",
+      "base_url": "https://opencode.ai/zen/go/v1",
+      "key_url": "https://opencode.ai/auth",
+      "auth": [
+        "key"
+      ],
+      "regions": [
+        "global"
+      ],
+      "capabilities": [
+        "chat"
+      ],
+      "defaults": {
+        "chat": "deepseek-v4.1-flash"
+      },
+      "session_header": "x-opencode-session",
+      "note": "A subscription for coding agents: Go ($10 a month) or Go Plus ($40) in the OpenCode console, then a key made there; usage is counted per model against monthly, weekly and five hour limits. OpenCode asks every client to name itself and to send one stable id per conversation in x-opencode-session: the runtime sends both, the desktop reaches Go through its model adapter's own OpenCode Go route, which sends the id and speaks each model's shape, and the phone apps send an id per chat (a hash of its first message, the same on every turn). Outside the desktop only the OpenAI shape is reached, which is where the open coding models answer; the GPT, Grok, Claude, MiniMax and Qwen ids speak the Responses and Messages shapes. The one vision model OpenCode lists (deepseek-v4-flash-vision-exp) is an id DeepSeek has retired on its own platform, so the hands are not claimed here. OpenCode publishes no plan sign-in, only a key.",
+      "verified": "2026-10"
+    },
+    {
+      "id": "standardcompute",
+      "name": "Standard Compute",
+      "protocol": "openai",
+      "base_url": "https://api.stdcmpt.com/v1",
+      "key_url": "https://standardcompute.com/dashboard/api-keys",
+      "key_hint": "sk_live_…",
+      "auth": [
+        "key"
+      ],
+      "regions": [
+        "global"
+      ],
+      "capabilities": [
+        "chat"
+      ],
+      "defaults": {
+        "chat": "standardcompute"
+      },
+      "note": "A gateway with one key for open and closed models (DeepSeek, GLM, Kimi, Qwen, GPT, Claude, Gemini and others) on a fixed monthly plan from $19; each plan has a monthly compute budget, and once it is used, requests stop with 402; there are no overage charges. The model standardcompute is a router: it picks a model for each request from the ones enabled on the account's Models page, and any id from /v1/models can be set instead. Chat only here: the router's entry in /v1/models declares no picture input, so the hands are not claimed.",
+      "verified": "2026-10"
+    },
+    {
+      "id": "api-route",
+      "name": "API Route",
+      "protocol": "openai",
+      "base_url": "https://global.api-route.com/v1",
+      "key_url": "https://www.api-route.com/api-keys",
+      "key_hint": "sk-…",
+      "auth": [
+        "key"
+      ],
+      "regions": [
+        "global"
+      ],
+      "capabilities": [
+        "chat"
+      ],
+      "defaults": {
+        "chat": "gpt-6.1-sol"
+      },
+      "note": "An OpenAI-compatible gateway using your own API key. The default is gpt-6.1-sol; choose other model ids from the key's /v1/models list. Usage is deducted from your prepaid API Route balance at the selected model's current rates. Chat only here; picture input, image generation and video have not been verified.",
+      "verified": "2026-10"
+    },
+    {
+      "id": "cheaperinference",
+      "name": "Cheaper Inference",
+      "protocol": "openai",
+      "base_url": "https://api.cheaperinference.com/v1",
+      "key_url": "https://cheaperinference.com/signup",
+      "key_hint": "ci_live_…",
+      "auth": [
+        "key"
+      ],
+      "regions": [
+        "global"
+      ],
+      "capabilities": [
+        "chat"
+      ],
+      "defaults": {
+        "chat": "gpt-5.4-mini"
+      },
+      "note": "An OpenAI-compatible gateway with one key for models from several labs (DeepSeek, GLM, Kimi, Qwen, GPT, Claude, Gemini and others). Chat only here, on the OpenAI shape: the default model is gpt-5.4-mini, and any id from its /v1/models list can be set instead.",
+      "verified": "2026-10"
+    },
+    {
+      "id": "opper",
+      "name": "Opper",
+      "protocol": "openai",
+      "base_url": "https://api.opper.ai/v3/compat",
+      "key_url": "https://platform.opper.ai",
+      "auth": [
+        "key"
+      ],
+      "regions": [
+        "global"
+      ],
+      "capabilities": [
+        "chat"
+      ],
+      "defaults": {
+        "chat": "claude-sonnet-4-6"
+      },
+      "note": "An OpenAI-compatible gateway hosted in the EU, with one key for 700+ models from 50+ providers (Claude, GPT, Gemini, DeepSeek, Kimi, Mistral and others) at the providers' rates, with no markup. Chat only here, on the OpenAI shape: the default model is claude-sonnet-4-6, and any id from its /v3/compat/models list can be set instead; a provider/model id such as anthropic/claude-sonnet-4-6 pins one route.",
+      "verified": "2026-10"
+    },
+    {
+      "id": "atmorouter",
+      "name": "AtmoRouter",
+      "protocol": "openai",
+      "base_url": "https://atmorouter.dev/v1",
+      "key_url": "https://atmorouter.dev/dashboard/keys",
+      "key_hint": "ar-…",
+      "auth": [
+        "key"
+      ],
+      "regions": [
+        "global"
+      ],
+      "capabilities": [
+        "chat"
+      ],
+      "defaults": {
+        "chat": "cc/claude-sonnet-4-6"
+      },
+      "note": "A pay-as-you-go OpenAI-compatible gateway with one key for models from several labs (Claude, GPT, Gemini, DeepSeek, GLM, Kimi, Qwen, MiniMax and others). Model ids carry a route prefix, as its /v1/models list names them. Chat only here, on the OpenAI shape: the default model is cc/claude-sonnet-4-6, and any id from that list can be set instead.",
+      "verified": "2026-10"
+    },
+    {
+      "id": "ollama",
+      "name": "Ollama",
+      "protocol": "openai",
+      "base_url": "http://127.0.0.1:11434/v1",
+      "key_url": "https://ollama.com/download",
+      "auth": [
+        "none"
+      ],
+      "regions": [
+        "global"
+      ],
+      "capabilities": [
+        "chat"
+      ],
+      "defaults": {
+        "chat": "qwen3:8b"
+      },
+      "note": "Runs on this machine, no key, nothing leaves it. Hands need a model that reads pictures (a vision model such as a Qwen VL build); the model list says which.",
+      "verified": "2026-10",
+      "reasoning": {
+        "doc": "https://docs.ollama.com/api/openai-compatibility",
+        "wire": "reasoning_effort",
+        "rules": [
+          {
+            "models": "gpt-oss",
+            "levels": [
+              "low",
+              "medium",
+              "high"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "lm-studio",
+      "name": "LM Studio",
+      "protocol": "openai",
+      "base_url": "http://127.0.0.1:1234/v1",
+      "key_url": "https://lmstudio.ai",
+      "auth": [
+        "none"
+      ],
+      "regions": [
+        "global"
+      ],
+      "capabilities": [
+        "chat"
+      ],
+      "defaults": {},
+      "note": "LM Studio's local server, OpenAI-compatible, no key. Vision only if the loaded model has it.",
+      "verified": "2026-10"
+    },
+    {
+      "id": "vllm",
+      "name": "vLLM",
+      "protocol": "openai",
+      "base_url": "http://127.0.0.1:8000/v1",
+      "key_url": "https://docs.vllm.ai",
+      "auth": [
+        "none",
+        "key"
+      ],
+      "regions": [
+        "global"
+      ],
+      "capabilities": [
+        "chat"
+      ],
+      "defaults": {},
+      "note": "A vLLM server you run yourself; a key only if you started it with one. Vision only if the served model has it.",
+      "verified": "2026-10",
+      "reasoning": {
+        "doc": "https://docs.vllm.ai/en/latest/features/reasoning_outputs/",
+        "wire": "reasoning_effort",
+        "rules": [
+          {
+            "models": "gpt-oss",
+            "levels": [
+              "low",
+              "medium",
+              "high"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "custom",
+      "name": "Any OpenAI-compatible endpoint",
+      "protocol": "openai",
+      "base_url": "",
+      "key_url": "",
+      "auth": [
+        "key",
+        "none"
+      ],
+      "regions": [
+        "global"
+      ],
+      "capabilities": [
+        "chat"
+      ],
+      "user_capabilities": true,
+      "defaults": {},
+      "note": "A gateway, a relay, a server of your own: paste the address (usually ending in /v1) and say what it can do; the person sets the capabilities.",
+      "verified": "2026-10"
+    }
+  ]
+}
